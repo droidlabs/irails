@@ -1,0 +1,75 @@
+form {
+  label {
+    display: block;
+    padding: 4px 0 4px 2px;
+    &.boolean {
+      display: inline;
+    }
+  }
+  label abbr {
+    color: #CC0000;
+    font-size: 11px;
+  }
+  select,
+  textarea,
+  input[type="password"],
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="number"],
+  input[type="tel"] {
+    margin-top: 2px;
+    margin-bottom: 6px;
+    width: 400px;
+    padding: 5px 10px;
+    background: #fff;
+    color: #222;
+    font-size: 16px;
+    border: 1px solid #888;
+    @include box-shadow(0 0 3px #888);
+    @include border-radius(4px);
+  }
+  input[type="submit"]{
+		box-sizing: content-box;
+		font-family: 'Ubuntu', sans-serif;
+		margin: 10px 0;
+    border: 1px solid #2b323b;
+		font-weight: normal;
+		color: #fff;
+		font-size: 16px;
+		line-height: 24px;
+		height: 24px;
+		padding: 2px 16px;
+		text-shadow: 0 1px 0 #000;
+		@include box-shadow(0 1px 1px #6c7686 inset, 0 1px 2px #333);
+		@include linear-gradient(#5d6877, #464e5a);
+		@include border-radius(4px);
+		text-decoration: none;
+		cursor: pointer;
+  }
+  .error input[type="text"],
+  .error input[type="password"] {
+    border: 1px solid #733;
+  }
+  textarea {
+    height: 70px;
+    width: 400px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .error {
+    color: #CC0000;
+    padding: 3px;
+    padding-top: 0;
+    font-size: 11px;
+    display: block;
+  }
+  .hint {
+    color: #555;
+    padding: 3px;
+    padding-top: 0;
+    font-size: 11px;
+    display: block;
+  }
+}

@@ -1,0 +1,18 @@
+article
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), \
+    validate: true, html: { :method => :put }) do |f|
+    h2 Account Settings
+    = f.input :email, required: true, autofocus: true
+    = f.input :full_name, required: true
+    = f.input :avatar
+    = f.input :about
+    = f.input :password, hint: "leave it blank if you don't want to change it", required: false
+    = f.input :password_confirmation, required: false
+    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+    
+    = f.button :submit, "Update"
+article
+  h2 Cancel my account
+  p
+  | Unhappy? 
+  = link_to 'Cancel my account', registration_path(resource_name), confirm: 'Are you sure?', :method => :delete

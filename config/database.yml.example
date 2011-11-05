@@ -1,0 +1,22 @@
+defaults: &defaults
+  adapter: mysql2
+  encoding: utf8
+  database: irails
+  host: localhost
+  username: root
+  password: password
+
+development:
+  <<: *defaults
+
+staging:
+  database: irails_staging
+  <<: *defaults
+
+production:
+  database: irails_production
+  <<: *defaults
+
+test:
+  database: irails_test
+  <<: *defaults
