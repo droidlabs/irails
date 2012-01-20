@@ -4,15 +4,9 @@ Feature: Sign up
   I want to register a new account with the system
 
   Scenario: User signs up
-    When I go to the sign up page
-    And I fill in "Full name" with "Chuck Norris"
-    And fill in "Email" with "chuck@example.com"
-    And fill in "Password" with "123456"
-    And fill in "Password confirmation" with "123456"
-    And press "Sign up"
+    When I submit registration form
     Then I should be on the home page
-    And 1 email should be delivered with subject: "Confirmation instructions"
-    And the email should contain "Chuck Norris"
+    And I should receive registration confirmation email
     When I follow "Confirm my account" in the email
     Then I should be signed in
     And I should be on the home page
@@ -24,12 +18,7 @@ Feature: Sign up
     And press "Resend confirmation instructions"
     Then 1 email should be delivered with subject: "Confirmation instructions"
 
-  Scenario: User signs up with invalid date
-    When I go to the sign up page
-    And I fill in "Full name" with ""
-    And fill in "Email" with "invalid email"
-    And fill in "Password" with "123456"
-    And fill in "Password confirmation" with "123456"
-    And press "Sign up"
+  Scenario: User signs up with invalid data
+    When I submit registration form with invalid data
     Then I should see "can't be blank" error for "user_full_name"
     And I should see "invalid" error for "user_email"
