@@ -2,11 +2,11 @@ doctype html
 = conditional_html do
   head
     title= configatron.app_name
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag    "front_pages"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = render 'layouts/head'
-  body
+  body.external
     #wrapper class=(controller_action_class)
       = render 'layouts/flashes'
       = render 'layouts/header'

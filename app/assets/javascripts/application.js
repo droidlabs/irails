@@ -2,4 +2,4 @@
 //= require jquery_ujs
 //= require rails.validations
 //= require gritter
-//= require_tree .
+//= require_tree ./helpers

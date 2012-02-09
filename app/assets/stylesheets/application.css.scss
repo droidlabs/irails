@@ -1,7 +1,8 @@
-//*= require gritter
 @import "bourbon";
+@import "gritter";
 
 @import "partials/reset";
 @import "partials/forms";
 @import "partials/layout";
-@import "partials/pages";
+@import "partials/typography";
+@import "partials/views";

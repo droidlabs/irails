@@ -8,13 +8,17 @@ gem 'slim-rails', '0.2.1'
 
 gem 'simple_form', '1.5.2'
 gem 'configatron', '2.8.4'
+gem 'default_value_for', '1.0.7'
 gem 'paperclip', '2.4.5'
 gem 'client_side_validations', '3.1.4'
 gem 'kaminari', '0.13.0'
 gem 'gritter', '0.6.2'
-gem 'high_voltage', '1.0.1'
 gem 'activeadmin', '0.4.0'
 
+# payments
+gem 'stripe', '1.6.0'
+
+# assets
 gem 'jquery-rails', '1.0.19'
 gem 'sass-rails', '3.2.3'
 group :assets do
