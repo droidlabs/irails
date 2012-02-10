@@ -14,9 +14,12 @@ body {
 	@include box-shadow(0 0 22px 0 #000, inset 0 1px 4px 0 rgba(255, 255, 255, 0.3));
 	
 	&.sessions-new,
+	&.registrations-new,
+	&.confirmations-new,
 	&.passwords-new {
-		margin: 80px auto;
-		width: 420px;
+		margin: 85px auto;
+		margin-bottom: 0;
+		width: 424px;
 		min-height: 200px;
 	}
 }
