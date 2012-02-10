@@ -6,10 +6,10 @@ configatron.app_name = 'iRails'
 # subscriptions
 configatron.subscription.stripe_key = nil
 configatron.subscription.plans = %w[free paid]
+configatron.subscription.free_plans = %w[free]
 configatron.subscription.default_plan = 'free'
 
 case Rails.env.to_sym
 when :development
   configatron.host = 'localhost:3000'
 end
-  

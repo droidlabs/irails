@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120209213129) do
+ActiveRecord::Schema.define(:version => 20120210011238) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(:version => 20120209213129) do
     t.string   "plan"
     t.string   "customer_uid"
     t.datetime "blocked_at"
-    t.datetime "trial_end_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "customer_card"
   end
 
   add_index "subscriptions", ["user_id"], :name => "index_subscriptions_on_user_id"

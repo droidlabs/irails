@@ -1,0 +1,1 @@
+Stripe.api_key = configatron.subscription.stripe_key
