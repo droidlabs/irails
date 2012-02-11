@@ -7,11 +7,11 @@ class Subscription < ActiveRecord::Base
   
   validates  :plan, presence: true
   
-  after_create  :create_stripe_customer, if: :stripe_key_present?
-  after_destroy :delete_stripe_customer, if: :stripe_key_present?
+  after_create  :create_stripe_customer, if: :use_stripe?
+  after_destroy :delete_stripe_customer, if: :use_stripe?
   
-  def stripe_key_present?
-    configatron.subscription.stripe_key.present?
+  def use_stripe?
+    stripe_key_present? && !test_env?
   end
   
   def change_plan(plan)
@@ -109,11 +109,20 @@ class Subscription < ActiveRecord::Base
   end
   
   protected
+  def stripe_key_present?
+    configatron.subscription.stripe_key.present?
+  end
+  
+  def test_env?
+    Rails.env.test?
+  end
+  
   def stripe_customer
-    @stripe_customer = Stripe::Customer.retrieve(customer_uid)
+    @stripe_customer ||= Stripe::Customer.retrieve(customer_uid)
   end
   
   def create_stripe_customer
+    return unless use_stripe?
     customer = Stripe::Customer.create(
       email: user.email,
       description: "Customer for #{user.email}"
@@ -123,14 +132,14 @@ class Subscription < ActiveRecord::Base
   end
   
   def delete_stripe_customer
-    stripe_customer.delete
+    stripe_customer.delete if use_stripe?
   end
   
   def update_stripe_subscription_plan(plan)
-    stripe_customer.update_subscription(prorate: true, plan: plan)
+    stripe_customer.update_subscription(prorate: true, plan: plan) if use_stripe?
   end
   
   def delete_stripe_subscription_plan
-    stripe_customer.cancel_subscription
+    stripe_customer.cancel_subscription if use_stripe?
   end
 end

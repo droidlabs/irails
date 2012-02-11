@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :user do
     full_name "Bruce Lee"
     email { Factory.next(:email) }
+    subscription { |u| u.association(:subscription) }
     password "foobar"
     password_confirmation { |u| u.password }  
   end

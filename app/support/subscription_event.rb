@@ -35,12 +35,15 @@ class SubscriptionEvent
   end
 
   def invoice_payment_succeeded
+    if Time.at(stripe_event.data.object.period_end) > Time.now
+      subscription.unblock!
+    end
     SubscriptionMailer.payment_succeeded(subscription)
   end
 
   def invoice_payment_failed
     attemp_count = stripe_event.data.object.attempt_count
-    if attemp_count == ATTEMPS_BEFORE_BLOCK
+    if attemp_count == ATTEMPS_BEFORE_BLOCK && !subscription.blocked?
       subscription.block!
       SubscriptionMailer.account_blocked(subscription, attemp_count).deliver
     end
