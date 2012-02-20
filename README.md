@@ -26,7 +26,7 @@ Simple template for Rails 3.1 based projects
 
 ## License
 
-Licenced under GNU GPL2: <http://www.gnu.org/licenses/gpl-2.0.html>
+Licenced under [GNU GPL2](http://www.gnu.org/licenses/gpl-2.0.html).
 
 ## Thanks for using iRails!
 
