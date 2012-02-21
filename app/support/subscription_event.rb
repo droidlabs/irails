@@ -6,7 +6,7 @@ class SubscriptionEvent
   attr_reader :attributes
 
   def initialize(json)
-    @attributes = ActiveSupport::JSON.decode(json)
+    @attributes = json.is_a?(String) ? ActiveSupport::JSON.decode(json) : json
   end
 
   def subscription
@@ -19,7 +19,7 @@ class SubscriptionEvent
 
   private
   def name
-    @name ||= stripe_event.type.gsub('.', '_')
+    @name ||= attributes['type'].gsub('.', '_')
   end
 
   def can_be_handled?

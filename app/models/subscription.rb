@@ -34,14 +34,15 @@ class Subscription < ActiveRecord::Base
   end
   
   def should_change_card?
-    blocked? || customer_card.blank?
+    (blocked? || customer_card.blank?) && paid_plan?(plan)
   end
   
-  def change_card(attributes)
+  def change_card(attributes, plan = nil)
     token = Stripe::Token.create(card: attributes)
     stripe_customer.card = token.id
     stripe_customer.save
     update_attribute(:customer_card, token.id)
+    change_plan(plan) if plan.present?
     { errors: [], attributes: attributes, card: token.card }
   rescue Stripe::CardError => e
     { errors: [e.message], attributes: attributes, card: nil }
@@ -51,12 +52,12 @@ class Subscription < ActiveRecord::Base
     self.plan == plan.to_s
   end
   
-  def free_plan?
-    self.class.free_plan?(plan)
+  def free_plan?(plan = nil)
+    self.class.free_plan?(plan || self.plan)
   end
   
-  def paid_plan?(plan)
-    !free_plan?
+  def paid_plan?(plan = nil)
+    !free_plan?(plan || self.plan)
   end
   
   def blocked?

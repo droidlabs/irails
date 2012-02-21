@@ -30,7 +30,7 @@ end
 
 group :development do
   gem 'rails_best_practices', '1.7.2'
-  gem 'capistrano', '2.10.0.pre'
+  gem 'capistrano', '2.11.1'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/creadroid/letter_opener.git'
 end
 

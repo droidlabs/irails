@@ -20,6 +20,6 @@ class StripeStub
   def stripe_event(type, data)
     response = OpenStruct.new(type: type, data: data)
     Stripe::Event.stub(:retrieve).and_return(response)
-    {id: 'evt_234123123'}
+    {'type' => type, 'id' => 'evt_234123123'}
   end
 end
