@@ -1,6 +1,6 @@
 # Welcome to iRails
 
-Simple template for Rails 3.1 based projects
+Simple template for Rails 3.2 based projects
 
 ## Installation
 
