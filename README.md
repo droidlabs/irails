@@ -4,7 +4,7 @@ Simple template for Rails 3.2 based projects
 
 ## Installation
 
-* $ git clone git://github.com/creadroid/irails.git myapp
+* $ git clone git://github.com/droidlabs/irails.git myapp
 * $ cd ./myapp
 * $ cp config/database.yml.example config/database.yml
 * Configure your config/database.yml
