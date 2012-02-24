@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/creadroid/letter_opener.git
+  remote: git://github.com/droidlabs/letter_opener.git
   revision: 7e5793ccff0771861e46704821b86d6628fc3f35
   specs:
     letter_opener (0.0.2)
