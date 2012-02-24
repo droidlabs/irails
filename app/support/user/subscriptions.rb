@@ -6,6 +6,8 @@ module User::Subscriptions
     before_create :build_subscription
     
     delegate :plan, :plan?, :blocked?, to: :subscription, prefix: true
+    
+    cattr_accessor :_has_subscription
   end
   
   def build_subscription

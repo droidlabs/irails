@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :user do
     full_name "Bruce Lee"
     email { Factory.next(:email) }
-    if User.new.respond_to?(:subscription)
+    if User.respond_to?(:_has_subscription)
       subscription { |u| u.association(:subscription) }
     end
     password "foobar"
