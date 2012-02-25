@@ -1,9 +1,8 @@
 #
 # jQuery Placeholder Plugin
-# https://github.com/creadroid/jquery.placeholder
+# https://github.com/droidlabs/jquery.placeholder
 # Copyright (c) 2011-2012 Droid Labs
-# Licenced under Creative Commons Attribution-ShareAlike 3.0 Unported
-# http://creativecommons.org/licenses/by-sa/3.0/
+# Licenced under [MIT](http://www.opensource.org/licenses/mit-license.php).
 #
 (($) ->
   $.fn.placeholder = (options) ->
