@@ -1,4 +1,6 @@
 header
+  .site-logo 
+    = link_to configatron.app_name, root_path
   nav.site-navigation
     ul
       - if user_signed_in?
@@ -11,6 +13,4 @@ header
       - else
         li.first= navigation_link_to 'Registration', new_user_registration_path
         li= navigation_link_to 'Login', new_user_session_path
-  h1.site-logo 
-    = link_to configatron.app_name, root_path
   .clear

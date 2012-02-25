@@ -1,74 +1,97 @@
 form {
-  label {
-    display: block;
-    padding: 4px 0 4px 2px;
-    &.boolean {
-      display: inline;
-    }
-  }
-  label abbr {
-    color: #CC0000;
-    font-size: 11px;
-  }
-  select,
-  textarea,
-  input[type="password"],
-  input[type="text"],
-  input[type="email"],
-  input[type="search"],
-  input[type="url"],
-  input[type="number"],
-  input[type="tel"] {
-    margin-top: 2px;
-    margin-bottom: 6px;
-    width: 400px;
-    padding: 5px 10px;
-    background: #fff;
-    color: #222;
-    font-size: 16px;
-    border: 1px solid #888;
-    @include box-shadow(0 0 3px #888);
-    @include border-radius(4px);
-  }
-  button, .button {
+	label {
+		display: block;
+		padding: 4px 0 4px 2px;
+		&.boolean {
+			display: inline;
+		}
+	}
+	label abbr {
+		color: #CC0000;
+		font-size: 11px;
+	}
+	select,
+	textarea,
+	input[type="password"],
+	input[type="text"],
+	input[type="email"],
+	input[type="search"],
+	input[type="url"],
+	input[type="number"],
+	input[type="tel"] {
+		margin: 2px 0 18px;
+		width: 410px;
+		padding: 5px;
+		background: #fff;
+		color: #222;
+		font-size: 12px;
+		border: 5px solid #ebebeb;
+		@include border-radius(6px);
+		@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.05) inset);
+		&:focus {
+			border-color: #d7d7d7;
+		}
+	}
+	button, .button {
 		font-family: 'Ubuntu', sans-serif;
 		margin: 10px 0;
-    border: 1px solid #2b323b;
+		border: 1px solid #2b323b;
 		font-weight: normal;
 		color: #fff;
-		font-size: 16px;
+		font-size: 12px;
 		line-height: normal;
 		height: 32px;
 		padding: 2px 16px;
 		text-shadow: 0 1px 0 #000;
-		@include box-shadow(0 1px 1px #6c7686 inset, 0 1px 2px #333);
+		text-decoration: none;
+		@include box-shadow(0 1px 1px rgba(255, 255, 255, 0.3) inset, 0 0 4px rgba(0, 0, 0, 0.2));
 		@include linear-gradient(#5d6877, #464e5a);
 		@include border-radius(4px);
-		text-decoration: none;
-		cursor: pointer;
-  }
-  .error input[type="text"],
-  .error input[type="password"] {
-    border: 1px solid #733;
-  }
-  textarea {
-    height: 70px;
-    width: 400px;
-    padding: 10px;
-    font-size: 14px;
-  }
-  .error {
-    color: #CC0000;
-    padding: 3px;
-    padding-top: 0;
-    font-size: 11px;
-    display: block;
-  }
-  .hint {
-    color: #555;
-    padding: 3px;
-    padding-top: 0;
-    font-size: 11px;
-    display: block;
-  }
+		&:hover {
+			@include linear-gradient(#697687, #525b69);
+		}
+		&:active {
+			position: relative;
+			top: 1px;
+		}
+	}
+	textarea {
+		height: 70px;
+		width: 400px;
+		padding: 10px;
+		font-size: 14px;
+	}
+	.input {
+		&.boolean {
+			margin: 0 0 10px;
+		}
+	}
+	.error input[type="text"],
+	.error input[type="password"] {
+		border-color: #CC333F;
+	}
+	.field_with_errors {
+		position: relative;
+		margin: 0 0 15px;
+		input {
+			border-color: #CC333F;
+		}
+	}
+	.error {
+		color: #CC0000;
+		padding: 3px;
+		padding-top: 0;
+		font-size: 11px;
+		display: block;
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+	}
+	.hint {
+		color: #555;
+		padding: 3px;
+		padding-top: 0;
+		font-size: 11px;
+		display: block;
+	}
 }

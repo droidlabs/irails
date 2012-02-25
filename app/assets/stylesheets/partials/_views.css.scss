@@ -1,7 +1,14 @@
 .devise-links {
+	width: 460px;
+	position: relative;
+	left: -15px;
+	background: url('bg-separate.png') 2px 0 repeat-x;
+	padding: 20px 0 0;
+	margin: 12px 0 0;
+	text-align: center;
 	a {
 		color: #333;
-		font-size: 14px;
-		margin: 0 4px;
+		font-size: 11px;
+		margin: 0 6px;
 	}
 }
