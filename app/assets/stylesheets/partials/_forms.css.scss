@@ -32,6 +32,9 @@ form {
 			border-color: #d7d7d7;
 		}
 	}
+	input[type="file"] {
+		margin: 2px 0 18px;
+	}
 	button, .button {
 		font-family: 'Ubuntu', sans-serif;
 		margin: 10px 0;
