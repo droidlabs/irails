@@ -8,7 +8,7 @@ class CreateSubscriptions < ActiveRecord::Migration
       t.datetime  :trial_end_at
       t.timestamps
     end
-    
+
     add_index :subscriptions, :user_id
   end
 end

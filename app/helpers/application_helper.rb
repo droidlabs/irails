@@ -11,7 +11,7 @@ module ApplicationHelper
     html += capture( &block ) << "\n</html>".html_safe if block_given?
     html.html_safe
   end
-  
+
   def restfull_action_name
     action = case controller.action_name.to_sym
     when :create
@@ -22,11 +22,11 @@ module ApplicationHelper
       controller.action_name
     end
   end
-  
+
   def controller_action_class
     "#{controller.controller_name}-#{restfull_action_name}"
   end
-  
+
   def controller?(c)
     controller.controller_name == c.to_s
   end

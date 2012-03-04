@@ -1,11 +1,11 @@
 h2 Hello, #{@resource.full_name}
-p 
+p
   | You can confirm your account through the link below:
 
-p 
-  = link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+p
+  = link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @resource.confirmation_token)
 
 p
-  | Thanks, 
+  | Thanks,
   br
   | The #{configatron.app_name} Team.

@@ -1,15 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.2'
 gem 'rake', '0.9.2.2'
 gem "mysql2", '0.3.11'
-gem 'devise', '1.5.3'
+gem 'devise', '2.0.4'
 gem 'slim-rails', '1.0.3'
 
 gem 'simple_form', '1.5.2'
 gem 'configatron', '2.8.4'
 gem 'default_value_for', '1.0.7'
-gem 'paperclip', '2.4.5'
+gem 'paperclip', '2.7.0'
 gem 'client_side_validations', '3.1.4'
 gem 'kaminari', '0.13.0'
 gem 'gritter', '0.6.2'
@@ -32,7 +32,7 @@ group :assets do
 end
 
 group :development do
-  gem 'rails_best_practices', '1.7.2'
+  gem 'rails_best_practices', '1.8.0'
   gem 'capistrano', '2.11.2'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
 end
@@ -49,4 +49,5 @@ group :test, :development do
   gem 'email_spec', '1.2.1'
   gem 'simplecov', '0.5.4', require: false
   gem 'spork', '0.9.0'
+  gem 'mocha'
 end
