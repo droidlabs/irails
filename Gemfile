@@ -41,7 +41,7 @@ group :test, :development do
   gem 'cucumber-rails', '1.2.1'
   gem 'shoulda', '2.11.3'
   gem 'database_cleaner', '0.7.1'
-  gem 'factory_girl_rails', '1.2.0'
+  gem 'factory_girl_rails', '1.7.0'
   gem 'capybara', '1.1.2'
   gem 'pickle', '0.4.10'
   gem 'launchy', '2.0.5'

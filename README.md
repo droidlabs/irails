@@ -1,4 +1,4 @@
-# Welcome to iRails
+## Welcome to iRails
 
 [![Build Status](https://secure.travis-ci.org/droidlabs/irails.png)](http://travis-ci.org/droidlabs/irails)
 
