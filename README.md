@@ -1,5 +1,7 @@
 # Welcome to iRails
 
+[![Build Status](https://secure.travis-ci.org/droidlabs/irails.png)](http://travis-ci.org/droidlabs/irails)
+
 Simple template for Rails 3.2 based projects
 
 ## Installation

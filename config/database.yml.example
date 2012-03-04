@@ -1,22 +1,39 @@
+## sqlite
+#
 defaults: &defaults
-  adapter: mysql2
-  encoding: utf8
-  database: irails
-  host: localhost
-  username: root
-  password: password
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 
 development:
-  <<: *defaults
-
-staging:
-  database: irails_staging
-  <<: *defaults
-
-production:
-  database: irails_production
+  database: db/development.sqlite3
   <<: *defaults
 
 test:
-  database: irails_test
+  database: db/test.sqlite3
   <<: *defaults
+  
+## mysql 
+#
+# defaults: &defaults
+#   adapter: mysql2
+#   encoding: utf8
+#   database: irails
+#   host: localhost
+#   username: root
+#   password: mustdie
+#
+# development:
+#   <<: *defaults
+#  
+# staging:
+#   database: irails_staging
+#   <<: *defaults
+#  
+# production:
+#   database: irails_production
+#   <<: *defaults
+
+# test:
+#   database: irails_test
+#   <<: *defaults

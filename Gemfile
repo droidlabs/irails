@@ -1,8 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.2'
-gem 'rake', '0.9.2.2'
-gem "mysql2", '0.3.11'
 gem 'devise', '2.0.4'
 gem 'slim-rails', '1.0.3'
 
@@ -38,6 +36,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails', '2.8.1'
   gem 'cucumber-rails', '1.2.1'
   gem 'shoulda', '2.11.3'
@@ -50,4 +49,8 @@ group :test, :development do
   gem 'simplecov', '0.5.4', require: false
   gem 'spork', '0.9.0'
   gem 'mocha'
+end
+
+group :staging, :production do
+  gem "mysql2", '0.3.11'
 end
