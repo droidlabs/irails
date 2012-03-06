@@ -5,7 +5,7 @@ set :repository,  "GIT_REPO"
 
 role :web, dns_name                          # Your HTTP server, Apache/etc
 role :app, dns_name                          # This may be the same as your `Web` server
-role :db,  dns_name, :primary => true        # This is where Rails migrations will run
+role :db,  dns_name, primary: true           # This is where Rails migrations will run
 
 set :deploy_to, "/data/#{application}"
 

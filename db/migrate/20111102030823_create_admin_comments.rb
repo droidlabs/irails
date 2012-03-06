@@ -1,8 +1,8 @@
 class CreateAdminComments < ActiveRecord::Migration
   def self.up
     create_table :active_admin_comments do |t|
-      t.references :resource, :polymorphic => true, :null => false
-      t.references :author, :polymorphic => true
+      t.references :resource, polymorphic: true, null: false
+      t.references :author, polymorphic: true
       t.text :body
       t.string :namespace
       t.timestamps
