@@ -10,7 +10,7 @@ gem 'default_value_for', '1.0.7'
 gem 'paperclip', '2.7.0'
 gem 'client_side_validations', '3.1.4'
 gem 'kaminari', '0.13.0'
-gem 'gritter', '0.6.2'
+gem 'gritter', '1.0.1'
 
 # admin panel
 gem 'activeadmin', '0.4.2'
