@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.3'
 gem 'devise', '2.0.4'
 gem 'slim-rails', '1.0.3'
 

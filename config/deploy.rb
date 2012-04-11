@@ -7,8 +7,8 @@ set :keep_releases, 5
 set :scm, :git
 
 before  'deploy:setup', 'db:configure'
-before  'deploy:assets:precompile', 'db:symlink'
-after   'deploy:symlink', 'deploy:cleanup'
+before  'deploy:assets:precompile', 'db:create_symlink'
+after   'deploy:create_symlink', 'deploy:cleanup'
 
 namespace :deploy do
   task :start do ; end
@@ -51,10 +51,12 @@ production:
 
     run "mkdir -p #{shared_path}/config"
     put db_config, "#{shared_path}/config/database.yml"
+    run "mysql --user=#{db_username} --password=#{db_password} -e \"CREATE DATABASE IF NOT EXISTS #{db_name_staging}\""
+    run "mysql --user=#{db_username} --password=#{db_password} -e \"CREATE DATABASE IF NOT EXISTS #{db_name_production}\""
   end
 
   desc "Make symlink for database.yml"
-  task :symlink do
+  task :create_symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 end
