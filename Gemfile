@@ -29,13 +29,19 @@ group :assets do
   gem 'execjs', '1.2.13'
 end
 
+group :test, :development do
+  gem 'sqlite3', '1.3.6'
+  gem 'launchy', '2.0.5'
+end
+
 group :development do
   gem 'rails_best_practices', '1.9.1'
   gem 'capistrano', '2.11.2'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
+  gem 'quiet_assets', '1.0.1'
 end
 
-group :test, :development do
+group :test do
   gem 'sqlite3', '1.3.6'
   gem 'rspec-rails', '2.10.1'
   gem 'cucumber-rails', '1.3.0'
@@ -44,7 +50,6 @@ group :test, :development do
   gem 'factory_girl_rails', '3.2.0'
   gem 'capybara', '1.1.2'
   gem 'pickle', '0.4.10'
-  gem 'launchy', '2.0.5'
   gem 'email_spec', '1.2.1'
   gem 'simplecov', '0.5.4', require: false
   gem 'spork', '0.9.0'
