@@ -1,7 +1,8 @@
 class SubscriptionEvent
   ATTEMPS_BEFORE_BLOCK = 3
   ATTEMPS_WITH_NOTIFICATION = 1
-  EVENTS = %w[invoice_payment_succeeded invoice_payment_failed customer_subscription_trial_will_end]
+  EVENTS = %w[invoice_payment_succeeded invoice_payment_failed customer_subscription_trial_will_end
+    customer_updated customer_deleted customer_subscription_deleted customer_subscription_updated]
 
   attr_reader :attributes
 
@@ -31,11 +32,15 @@ class SubscriptionEvent
   end
 
   def stripe_customer_uid
-    @stripe_customer_uid ||= stripe_event.data.object.customer
+    @stripe_customer_uid ||= begin
+      stripe_event.data.object.customer
+    rescue
+      stripe_event.data.object.id
+    end
   end
 
   def invoice_payment_succeeded
-    if Time.at(stripe_event.data.object.period_end) > Time.now
+    if subscription.blocked? && Time.at(stripe_event.data.object.period_end) > Time.now
       subscription.unblock!
     end
     SubscriptionMailer.payment_succeeded(subscription)
@@ -54,5 +59,24 @@ class SubscriptionEvent
 
   def customer_subscription_trial_will_end
     SubscriptionMailer.trial_will_end(subscription).deliver
+  end
+
+  def customer_updated
+    subscription.update_customer(stripe_event.data.object.active_card)
+  end
+
+  def customer_deleted
+    subscriber = subscription.user
+    subscription.delete
+    subscriber.create_subscription
+  end
+
+  def customer_subscription_deleted
+    subscription.block! if Time.at(stripe_event.data.object.ended_at) <= Time.now
+  end
+
+  def customer_subscription_updated
+    subscription.update_attribute(:plan, stripe_event.data.object.plan.id)
+    subscription.unblock! if subscription.blocked?
   end
 end

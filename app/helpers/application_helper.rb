@@ -50,4 +50,8 @@ module ApplicationHelper
       link_to(title, url, options, &block)
     end
   end
+
+  def has_subscriptions?
+    current_user && current_user.respond_to?(:subscription)
+  end
 end

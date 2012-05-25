@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  include User::Subscriptions
+  #include User::Subscriptions
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable

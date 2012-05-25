@@ -20,18 +20,21 @@
         # Pass clicks on the placeholder text through to the input
         inputDefault.click -> $this.focus()
 
+        togglePlaceholder = =>
+          inputDefault.toggle(!!!$this.val())
+
         if clearOnFocus
           $this.focus -> inputDefault.hide()
-          $this.blur -> inputDefault.show() unless !!$this.val().length
+          $this.blur -> inputDefault.show() unless !!$this.val()
         else
           $this.keydown (event)->
             if (event.keyCode != '8' && event.keyCode != '9' && event.keyCode != '16')
               inputDefault.hide()
 
-          $this.keyup -> inputDefault.show() unless !!$this.val().length
+          $this.keyup -> inputDefault.show() unless !!$this.val()
 
-          $this.change ->
-            inputDefault.toggle(!!!$this.val())
-          .trigger('change')
+          $this.change -> togglePlaceholder()
+          $this.blur -> togglePlaceholder()
+          togglePlaceholder()
 
 ) jQuery

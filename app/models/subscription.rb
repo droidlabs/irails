@@ -20,7 +20,7 @@ class Subscription < ActiveRecord::Base
   end
 
   def active_plan
-    card_provided? ? plan : 'free'
+    card_provided? && !blocked? ? plan : 'free'
   end
 
   def change_plan(plan)
@@ -50,12 +50,7 @@ class Subscription < ActiveRecord::Base
     if use_stripe?
       response = change_stripe_card!(attributes, plan)
       if response[:errors].blank?
-        update_attributes({
-          exp_month: stripe_customer.active_card.exp_month,
-          exp_year: stripe_customer.active_card.exp_year,
-          last_four_digits: stripe_customer.active_card.last4,
-          cardholder_name: stripe_customer.active_card.name,
-          card_type: stripe_customer.active_card.type})
+        update_customer(stripe_customer.active_card)
       end
       response
     else
@@ -63,6 +58,15 @@ class Subscription < ActiveRecord::Base
       update_attribute(:plan, plan) if plan.present?
       {errors: []}
     end
+  end
+
+  def update_customer(active_card)
+    update_attributes({
+      exp_month: active_card.exp_month,
+      exp_year: active_card.exp_year,
+      last_four_digits: active_card.last4,
+      cardholder_name: active_card.name,
+      card_type: active_card.type})
   end
 
   def change_stripe_card!(attributes, plan = nil)
@@ -93,8 +97,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def block!
-    update_attribute(:blocked_at, Time.now)
-    delete_stripe_subscription_plan #TODO: check if we need this (change plan to free?)
+    update_attribute(:blocked_at, Time.now) unless free_plan?(plan)
+    delete_stripe_subscription_plan
   end
 
   def unblock!
@@ -178,6 +182,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def delete_stripe_subscription_plan
-    stripe_customer.cancel_subscription if use_stripe?
+    if use_stripe?
+      stripe_customer.cancel_subscription rescue nil
+    end
   end
 end

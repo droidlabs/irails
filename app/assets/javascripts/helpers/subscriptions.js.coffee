@@ -15,7 +15,8 @@ $ ->
 
   setInputError = ($input, message)->
     $input.closest('form').data('valid', false)
-    $input.after($('<span/>', class: 'error').html(message)).closest('.input').addClass('field_with_errors')
+    $wrapper = $input.closest('.input').addClass('field_with_errors')
+    $wrapper.append($('<span/>', class: 'error').html(message))
 
   clearErrors = ($input = null)->
     $form.data('valid', true)
