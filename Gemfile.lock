@@ -305,7 +305,7 @@ DEPENDENCIES
   mysql2 (= 0.3.11)
   paperclip (= 2.7.0)
   pickle (= 0.4.10)
-  quiet_assets
+  quiet_assets (= 1.0.1)
   rails (= 3.2.3)
   rails_best_practices (= 1.9.1)
   rspec-rails (= 2.10.1)

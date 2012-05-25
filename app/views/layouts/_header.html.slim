@@ -9,6 +9,7 @@ header
             = image_tag(current_user.avatar.url(:small))
           = current_user.full_name
         li= navigation_link_to 'Settings', edit_user_registration_path
+        li= navigation_link_to 'Billing Details', edit_subscription_path
         li= navigation_link_to 'Logout', destroy_user_session_path, method: :delete
       - else
         li.first= navigation_link_to 'Registration', new_user_registration_path

@@ -1,17 +1,26 @@
 class Subscription < ActiveRecord::Base
+  DEV_CARD = 'dev_card'
   default_value_for :plan, configatron.subscription.default_plan
 
-  attr_accessible []
+  attr_accessible :exp_month, :exp_year, :last_four_digits, :cardholder_name, :card_type
 
   belongs_to :user
 
-  validates  :plan, presence: true
+  validates  :plan, inclusion: configatron.subscription.plans, presence: true
 
   after_create  :create_stripe_customer, if: :use_stripe?
   after_destroy :delete_stripe_customer, if: :use_stripe?
 
   def use_stripe?
-    stripe_key_present? && !test_env?
+    self.class.stripe_key_present? && !self.class.test_env?
+  end
+
+  def card_provided?
+    customer_card.present?
+  end
+
+  def active_plan
+    card_provided? ? plan : 'free'
   end
 
   def change_plan(plan)
@@ -34,14 +43,25 @@ class Subscription < ActiveRecord::Base
   end
 
   def should_change_card?
-    (blocked? || customer_card.blank?) && paid_plan?(plan)
+    (blocked? || !card_provided?) && paid_plan?(plan)
   end
 
   def change_card(attributes, plan = nil)
     if use_stripe?
-      change_stripe_card!(attributes, plan)
+      response = change_stripe_card!(attributes, plan)
+      if response[:errors].blank?
+        update_attributes({
+          exp_month: stripe_customer.active_card.exp_month,
+          exp_year: stripe_customer.active_card.exp_year,
+          last_four_digits: stripe_customer.active_card.last4,
+          cardholder_name: stripe_customer.active_card.name,
+          card_type: stripe_customer.active_card.type})
+      end
+      response
     else
-      update_attribute(:customer_card, 'dev_card')
+      update_attribute(:customer_card, DEV_CARD)
+      update_attribute(:plan, plan) if plan.present?
+      {errors: []}
     end
   end
 
@@ -57,7 +77,7 @@ class Subscription < ActiveRecord::Base
   end
 
   def plan?(plan)
-    self.plan == plan.to_s
+    self.active_plan == plan.to_s
   end
 
   def free_plan?(plan = nil)
@@ -74,7 +94,7 @@ class Subscription < ActiveRecord::Base
 
   def block!
     update_attribute(:blocked_at, Time.now)
-    delete_stripe_subscription_plan
+    delete_stripe_subscription_plan #TODO: check if we need this (change plan to free?)
   end
 
   def unblock!
@@ -115,28 +135,37 @@ class Subscription < ActiveRecord::Base
         :free_to_free
       end
     end
+
+    def stripe_key_present?
+      configatron.subscription.stripe_key.present?
+    end
+
+    def test_env?
+      Rails.env.test?
+    end
   end
 
   protected
-  def stripe_key_present?
-    configatron.subscription.stripe_key.present?
-  end
-
-  def test_env?
-    Rails.env.test?
-  end
-
   def stripe_customer
     @stripe_customer ||= Stripe::Customer.retrieve(customer_uid)
   end
 
-  def create_stripe_customer
-    return unless use_stripe?
+  def customer_uid
+    read_attribute(:customer_uid) || get_new_customer_uid
+  end
+
+  def get_new_customer_uid
     customer = Stripe::Customer.create(
       email: user.email,
-      description: "Customer for #{user.email}"
+      description: "Customer for #{user.email} on #{Rails.env} env"
     )
     update_attribute(:customer_uid, customer.id)
+    customer.id
+  end
+
+  def create_stripe_customer
+    return unless use_stripe?
+    get_new_customer_uid
     change_plan!(self.plan)
   end
 
@@ -145,7 +174,7 @@ class Subscription < ActiveRecord::Base
   end
 
   def update_stripe_subscription_plan(plan)
-    stripe_customer.update_subscription(prorate: true, plan: plan) if use_stripe?
+    stripe_customer.update_subscription(prorate: true, plan: plan) if use_stripe? && card_provided?
   end
 
   def delete_stripe_subscription_plan

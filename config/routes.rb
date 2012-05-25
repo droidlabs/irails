@@ -6,5 +6,10 @@ Irails::Application.routes.draw do
 
   match '/stripe_listener' => 'subscription_events#stripe', method: :post
 
+  resource :subscription do
+    get :card_details
+  end
+
+
   root to: 'pages#show', id: 'home'
 end

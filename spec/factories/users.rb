@@ -3,7 +3,7 @@ FactoryGirl.define do
     full_name "Bruce Lee"
     email { FactoryGirl.generate(:email) }
     if User.respond_to?(:_has_subscription)
-      subscription { |u| u.association(:subscription) }
+      subscription { |u| u.association(:subscriptions) }
     end
     password "foobar"
     password_confirmation { |u| u.password }  

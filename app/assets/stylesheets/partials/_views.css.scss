@@ -21,3 +21,47 @@
 	left: -15px;
 	background: url('bg-separate.png') 2px 0 repeat-x;
 }
+
+form.card {
+  .date {
+    width: 100%;
+    select {
+      width: 100px;
+      float: left;
+      margin-right: 15px;
+    }
+    span {
+      position: relative;
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+/* CREDIT CARD */
+.about-card {
+	.card-desc {
+    li {
+      padding: 5px 0;
+      span {
+        margin-left: 4px;
+        color: #8b9a9d;
+      }
+    }
+	}
+}
+
+/* PLACEHOLDER */
+.input-holder {
+  position: relative;
+  span.error {
+    top: 28px;
+  }
+}
+
+.input-default {
+  color: #ccc;
+  position: absolute;
+  top: -6px;
+  left: 12px;
+}

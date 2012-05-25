@@ -5,7 +5,7 @@ module User::Subscriptions
     has_one :subscription, dependent: :destroy
     before_create :build_subscription
 
-    delegate :plan, :plan?, :blocked?, to: :subscription, prefix: true
+    delegate :plan, :plan?, :blocked?, to: :subscriptions, prefix: true
 
     cattr_accessor :_has_subscription
   end
