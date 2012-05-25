@@ -8,7 +8,8 @@ gem 'simple_form', '1.5.2'
 gem 'configatron', '2.8.4'
 gem 'default_value_for', '1.0.7'
 gem 'paperclip', '2.7.0'
-gem 'client_side_validations', '3.1.4'
+gem 'client_side_validations', '3.2.0.beta.3'
+gem 'client_side_validations-simple_form', '1.5.0.beta.3'
 gem 'kaminari', '0.13.0'
 gem 'gritter', '1.0.1'
 
@@ -24,7 +25,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'sass-rails', '3.2.4'
 group :assets do
   gem 'bourbon', '1.2.0'
-  gem 'coffee-rails', "3.2.2"
+  gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.1'
   gem 'execjs', '1.2.13'
 end
@@ -57,5 +58,5 @@ group :test do
 end
 
 group :staging, :production do
-  gem "mysql2", '0.3.11'
+  gem 'mysql2', '0.3.11'
 end
