@@ -12,6 +12,7 @@ gem 'client_side_validations', '3.2.0.beta.3'
 gem 'client_side_validations-simple_form', '1.5.0.beta.3'
 gem 'kaminari', '0.13.0'
 gem 'gritter', '1.0.1'
+gem 'seedbank', '0.0.8'
 
 # admin panel
 gem 'activeadmin', '0.4.2'
