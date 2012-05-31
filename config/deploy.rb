@@ -3,6 +3,7 @@ require 'bundler/capistrano'
 
 set :stages, %w(staging production)
 set :default_stage, "staging"
+set :deploy_via, :remote_cache
 set :keep_releases, 5
 set :scm, :git
 
@@ -58,5 +59,12 @@ production:
   desc "Make symlink for database.yml"
   task :create_symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+  end
+  
+  namespace :seed do
+    desc "Migrate DB data"
+    task :migrate do
+      run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake db:seed:migrate"
+    end
   end
 end
