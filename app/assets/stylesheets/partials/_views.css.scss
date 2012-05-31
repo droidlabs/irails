@@ -54,11 +54,12 @@ form.card {
 /* PLACEHOLDER */
 .input-holder {
   position: relative;
+  display: block;
 }
 
 .input-default {
   color: #ccc;
   position: absolute;
-  top: -6px;
+  top: 12px;
   left: 12px;
 }

@@ -1,2 +1,2 @@
 $ ->
-  $('input[placeholder]').placeholder()
+  $('input[placeholder], textarea[placeholder]').placeholder()
