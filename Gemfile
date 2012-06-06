@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.5'
 gem 'devise', '2.0.4'
 gem 'slim-rails', '1.0.3'
 
@@ -23,12 +23,12 @@ gem 'stripe', '1.6.0'
 
 # assets
 gem 'jquery-rails', '2.0.2'
-gem 'sass-rails', '3.2.4'
+gem 'sass-rails', '3.2.5'
 group :assets do
-  gem 'bourbon', '1.2.0'
+  gem 'bourbon', '2.1.0'
   gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '1.2.1'
-  gem 'execjs', '1.2.13'
+  gem 'uglifier', '1.2.4'
+  gem 'execjs', '1.4.0'
 end
 
 group :test, :development do
