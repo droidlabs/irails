@@ -60,7 +60,7 @@ production:
   task :create_symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
-  
+
   namespace :seed do
     desc "Migrate DB data"
     task :migrate do
