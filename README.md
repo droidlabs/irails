@@ -18,6 +18,14 @@ Simple template for Rails 3.2 based projects
 * Configure config/deploy/staging.rb
 * $ cap deploy:setup
 
+## Data migrations
+
+* Generate data migration
+* $ rails g data_migration generate_user_tokens
+  
+* Run data migration
+* $ rake data:migrate
+
 ## Admin panel
 
 **PLEASE DON'T FORGET TO CHANGE ADMIN PASSWORD**

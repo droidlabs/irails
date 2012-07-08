@@ -13,9 +13,10 @@ gem 'client_side_validations-simple_form', '1.5.0.beta.3'
 gem 'kaminari', '0.13.0'
 gem 'gritter', '1.0.1'
 gem 'seedbank', '0.0.8'
+gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 
 # admin panel
-gem 'activeadmin', '0.4.2'
+gem 'activeadmin', '0.4.4', git: 'git://github.com/gregbell/active_admin.git'
 gem 'meta_search', '1.1.2'
 
 # payments
@@ -27,7 +28,7 @@ gem 'sass-rails', '3.2.5'
 group :assets do
   gem 'bourbon', '2.1.0'
   gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '1.2.5'
+  gem 'uglifier', '1.2.6'
   gem 'execjs', '1.4.0'
 end
 

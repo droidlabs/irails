@@ -1,1 +1,0 @@
-# place here code to migrate DB data, then run rake db:seed:migrate
