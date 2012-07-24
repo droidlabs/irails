@@ -1,19 +1,6 @@
 /* GLOBAL */
 html { background: url('bg.jpg') 0 0 repeat #aaa; }
-body { cursor: default; font: 400 12px/1.2 'Open Sans', Tahoma, Arial, sans-serif; }
-strong, b { font-weight: 700; }
-em, i { font-style: italic; }
-input, textarea { cursor: text; }
-a, label, select, button, input[type=button], input[type=submit], input[type=checkbox], input[type=radio] { cursor: pointer; }
-
-/* GENERAL */
-.fleft { float: left; }
-.fright { float: right; }
-.hide { display: none; }
-.alignleft { text-align: left; }
-.aligncenter { text-align: center; }
-.alignright { text-align: right; }
-.clear { clear: both; }
+body { font: 400 12px/1.2 'Open Sans', Tahoma, Arial, sans-serif; }
 
 /* STYLES */
 
@@ -99,12 +86,3 @@ header {
 		}
 	}
 }
-
-/* CLEARFIX // Leave this at bottom */
-.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
-.clearfix { display: inline-block; }
-html[xmlns] .clearfix { display: block; }
-* html .clearfix { height: 1%; }
-/* FIXES FOR IE */
-* html .clearfix { zoom: 1; }
-*+html .clearfix { zoom: 1; }

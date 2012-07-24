@@ -43,7 +43,7 @@ Irails::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( active_admin.css active_admin.js front_pages.css html5.js )
+  config.assets.precompile += %w( active_admin.css active_admin.js front_pages.css html5.js ie.css )
   
   config.assets.initialize_on_precompile = false
   
