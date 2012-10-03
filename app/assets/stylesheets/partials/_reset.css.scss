@@ -25,10 +25,10 @@ a, label, select, button, input[type=button], input[type=submit], input[type=che
 /* GENERAL */
 .fleft { float: left; }
 .fright { float: right; }
-.hide { display: none; }
-.alignleft { text-align: left; }
-.aligncenter { text-align: center; }
-.alignright { text-align: right; }
+.hide, .hidden { display: none; }
+.alignleft { text-align: left !important; }
+.aligncenter { text-align: center !important; }
+.alignright { text-align: right !important; }
 .clear { clear: both; }
 
 /* CLEARFIX */
