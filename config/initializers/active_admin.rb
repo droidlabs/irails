@@ -87,7 +87,7 @@ ActiveAdmin.setup do |config|
   # Active Admin resources from here.
   #
   # config.before_filter :do_something_awesome
-
+  config.root_to = 'admin_users#index'
 
   # == Register Stylesheets & Javascripts
   #

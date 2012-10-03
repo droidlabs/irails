@@ -1,12 +1,15 @@
 class SubscriptionsController < ApplicationController
   before_filter :init_service, :has_subscription?
 
+  def edit
+  end
+
   def update
     if @service.process(:update_card_details)
       redirect_to edit_subscription_path, notice: 'Card details were successfully updated'
     else
       flash.now[:alert] = @service.errors.first
-      render action: :edit
+      render :edit
     end
   end
 

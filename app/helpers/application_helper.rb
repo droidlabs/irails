@@ -32,7 +32,7 @@ module ApplicationHelper
     controllers = controllers.map(&:to_sym)
     controllers.include?(controller.controller_name.to_sym)
   end
-  
+
   def action?(*actions)
     actions = actions.map(&:to_sym)
     actions.include?(controller.action_name.to_sym)

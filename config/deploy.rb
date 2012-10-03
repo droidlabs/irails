@@ -8,6 +8,8 @@ set :keep_releases, 5
 set :scm, :git
 
 before  'deploy:setup', 'db:configure'
+after   'deploy:setup', 'deploy:first'
+
 before  'deploy:assets:precompile', 'db:create_symlink'
 after   'deploy:create_symlink', 'deploy:cleanup'
 
@@ -16,6 +18,10 @@ namespace :deploy do
   task :stop do ; end
   task :restart, roles: :app, except: { no_release: true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+  task :first do
+    deploy.update
+    db.setup
   end
 end
 
@@ -59,6 +65,11 @@ production:
   desc "Make symlink for database.yml"
   task :create_symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+  end
+
+  desc "Setup DB data"
+  task :setup do
+    run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake db:setup"
   end
 
   namespace :seed do

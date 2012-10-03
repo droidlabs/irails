@@ -6,7 +6,7 @@ Irails::Application.routes.draw do
 
   match '/stripe_listener' => 'subscription_events#stripe', method: :post
 
-  resource :subscription do
+  resource :subscription, only: [:edit, :update] do
     get :card_details
   end
 
