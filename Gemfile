@@ -7,7 +7,7 @@ gem 'slim-rails', '1.0.3'
 gem 'simple_form', '2.0.3'
 gem 'configatron', '2.8.4'
 gem 'default_value_for', '1.0.7'
-gem 'paperclip', '3.2.0'
+gem 'paperclip', '3.3.0'
 gem 'client_side_validations', '3.2.0.beta.6'
 gem 'client_side_validations-simple_form', '2.0.0.beta.2'
 gem 'kaminari', '0.13.0'
@@ -24,7 +24,7 @@ gem 'activeadmin', '0.5.0'
 gem 'meta_search', '1.1.3'
 
 # payments
-gem 'stripe', '1.6.3'
+gem 'stripe', '1.7.4'
 
 # assets
 gem 'jquery-rails', '2.1.2'
@@ -57,7 +57,7 @@ group :test do
   gem 'capybara', '1.1.2'
   gem 'pickle', '0.4.10'
   gem 'email_spec', '1.2.1'
-  gem 'simplecov', '0.6.4', require: false
+  gem 'simplecov', '0.7.1', require: false
   gem 'spork', '0.9.0'
   gem 'mocha', '0.11.4'
 end
