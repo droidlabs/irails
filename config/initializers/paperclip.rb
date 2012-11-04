@@ -3,8 +3,11 @@ module Paperclip
     class << self
       alias_method :origin_default_options, :default_options
       def default_options
+        options = origin_default_options.deep_merge({
+          default_url: '/defaults/:attachment/:style.png'
+        })
         if configatron.aws.enabled
-          origin_default_options.deep_merge({
+          options.deep_merge!({
             storage:      :s3,
             url:          "uploads/#{Rails.env.first}/:class/:attachment/:id_partition/:style/:filename",
             path:         "uploads/#{Rails.env.first}/:class/:attachment/:id_partition/:style/:filename",
@@ -14,9 +17,8 @@ module Paperclip
               secret_access_key: configatron.aws.secret_key,
             }
           })
-        else
-          origin_default_options
         end
+        options
       end
     end
   end
