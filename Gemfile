@@ -48,6 +48,7 @@ group :development do
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
   gem 'thin'
+  gem 'bullet'
 end
 
 group :test do
