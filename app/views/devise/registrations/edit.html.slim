@@ -9,10 +9,10 @@ article
     = f.input :password, hint: "leave it blank if you don't want to change it", required: false
     = f.input :password_confirmation, required: false
     = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-    
+
     = f.button :submit, "Update"
 article.cancel-account
   h2 Cancel my account
   p
-  | Unhappy? 
+  | Unhappy?
   = link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?'}, method: :delete

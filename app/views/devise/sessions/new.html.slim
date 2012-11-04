@@ -5,5 +5,5 @@ article
     = f.input :password, required: false
     = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
     = f.button :submit, "Sign in"
-  
+
   = render partial: "devise/shared/links"
