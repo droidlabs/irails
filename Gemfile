@@ -14,6 +14,7 @@ gem 'kaminari', '0.13.0'
 gem 'gritter', '1.0.1'
 gem 'seedbank', '0.0.8'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
+gem 'navigation_link_to'
 
 # serialization
 gem 'yell', '0.12.0'

@@ -28,29 +28,6 @@ module ApplicationHelper
     "#{controller.controller_name}-#{restfull_action_name}"
   end
 
-  def controller?(*controllers)
-    controllers = controllers.map(&:to_sym)
-    controllers.include?(controller.controller_name.to_sym)
-  end
-
-  def action?(*actions)
-    actions = actions.map(&:to_sym)
-    actions.include?(controller.action_name.to_sym)
-  end
-
-  def navigation_link_to(title, url, options = {}, &block)
-    if current_page?(url) || options[:active]
-      options[:class] = [options[:class], 'active'].compact.join(' ')
-    end
-    if options[:wrapper].present?
-      content_tag options[:wrapper].to_sym, class: options[:class] do
-        link_to(title, url, options, &block)
-      end
-    else
-      link_to(title, url, options, &block)
-    end
-  end
-
   def has_subscriptions?
     current_user && current_user.respond_to?(:subscription)
   end
