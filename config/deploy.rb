@@ -6,12 +6,18 @@ set :default_stage, "staging"
 set :deploy_via, :remote_cache
 set :keep_releases, 5
 set :scm, :git
+set(:rake_cmd) {"#{bundle_cmd rescue 'bundle'} exec rake RAILS_ENV=#{rails_env}"}
 
 before  'deploy:setup', 'db:configure'
 after   'deploy:setup', 'deploy:first'
 
 before  'deploy:assets:precompile', 'db:create_symlink'
 after   'deploy:create_symlink', 'deploy:cleanup'
+after   'deploy:migrate', 'db:migrate_data'
+
+# local precompile assets
+before  'deploy:finalize_update', 'deploy:assets:symlink'
+after   'deploy:update_code', 'deploy:assets:precompile'
 
 namespace :deploy do
   task :start do ; end
@@ -72,10 +78,7 @@ production:
     run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake db:setup"
   end
 
-  namespace :seed do
-    desc "Migrate DB data"
-    task :migrate do
-      run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake db:seed:migrate"
-    end
+  task :migrate_data do
+    run "cd #{release_path} && RAILS_ENV=#{rails_env} rake data:migrate"
   end
 end
