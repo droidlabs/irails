@@ -6,12 +6,17 @@ Spork.prefork do
   require 'simplecov'
   SimpleCov.start 'rails'
 
+  require 'rails/application'
+  Spork.trap_method(Rails::Application, :reload_routes!)
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!) 
+  Spork.trap_method(Rails::Application, :eager_load!)
   require File.expand_path("../../config/environment", __FILE__)
+  Rails.application.railties.all { |r| r.eager_load! }
   require 'rspec/rails'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+  Dir[Rails.root.join("spec/support/*.rb")].each {|f| require f}
 
   RSpec.configure do |config|
     # == Mock Framework
@@ -32,9 +37,6 @@ end
 
 Spork.each_run do
   FactoryGirl.reload
-
-  Dir["#{Rails.root}/app/**/*.rb"].each {|file| load file }
-  load "#{Rails.root}/config/routes.rb"
 
   DatabaseCleaner.strategy = :truncation
   DatabaseCleaner.clean
