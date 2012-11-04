@@ -28,7 +28,7 @@ gem 'meta_search', '1.1.3'
 gem 'stripe', '1.7.4'
 
 # assets
-gem 'jquery-rails', '2.1.2'
+gem 'jquery-rails', '2.1.3'
 gem 'sass-rails', '3.2.5'
 group :assets do
   gem 'bourbon', '2.1.0'
@@ -47,6 +47,7 @@ group :development do
   gem 'capistrano', '2.11.2'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
+  gem 'thin'
 end
 
 group :test do
