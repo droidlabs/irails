@@ -3,10 +3,6 @@ set(:resque_polling_interval, 5)
 set(:resque_queue_name, "*")
 set(:resque_verbosity, 1)
 
-def remote_file_exists?(full_path)
-  "true" ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
-end
-
 def remote_process_exists?(pid_file)
   capture("ps -p $(cat #{pid_file}) ; true").strip.split("\n").size == 2
 end

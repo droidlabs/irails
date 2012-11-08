@@ -1,7 +1,3 @@
-def remote_file_exists?(full_path)
-  "true" ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
-end
-
 def assets_changed?
   from = source.next_revision(current_revision)
   asset_dirs = "vendor/assets/ app/assets/"

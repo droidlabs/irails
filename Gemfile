@@ -45,6 +45,7 @@ end
 group :development do
   gem 'rails_best_practices', '1.10.1'
   gem 'capistrano', '2.11.2'
+  gem 'capistrano-rbenv'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
   gem 'thin'
