@@ -1,4 +1,4 @@
-set(:resque_num_of_queues, 2)
+set(:resque_num_of_queues, 1)
 set(:resque_polling_interval, 5)
 set(:resque_queue_name, "*")
 set(:resque_verbosity, 1)
