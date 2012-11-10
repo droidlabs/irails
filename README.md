@@ -1,6 +1,7 @@
 ## Welcome to iRails
 
-[![Build Status](https://secure.travis-ci.org/droidlabs/irails.png)](http://travis-ci.org/droidlabs/irails)
+[![Build Status](https://secure.travis-ci.org/droidlabs/irails.png)](https://travis-ci.org/droidlabs/irails)
+[![Dependency Status](https://gemnasium.com/droidlabs/irails.png)](https://gemnasium.com/droidlabs/irails)
 
 Simple template for Rails 3.2 based projects
 
@@ -22,7 +23,7 @@ Simple template for Rails 3.2 based projects
 
 * Generate data migration
 * $ rails g data_migration generate_user_tokens
-  
+
 * Run data migration
 * $ rake data:migrate
 
