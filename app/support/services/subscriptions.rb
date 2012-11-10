@@ -1,4 +1,6 @@
 class Services::Subscriptions
+  include Services::Logger
+
   attr_accessor :errors
   attr_reader :params, :current_user
 
