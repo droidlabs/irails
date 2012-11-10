@@ -9,7 +9,7 @@ end
 
 namespace :resque do
   desc "Start Resque workers"
-  task :start_workers do
+  task :start do
     puts "Starting #{resque_num_of_queues} worker(s) with QUEUE: #{resque_queue_name}"
     resque_num_of_queues.times do |i|
       pid = "./tmp/pids/resque_worker_#{i}.pid"
@@ -25,7 +25,7 @@ namespace :resque do
   end
 
   desc "Quit running Resque workers"
-  task :stop_workers do
+  task :stop do
     resque_num_of_queues.times do |i|
       pid = "#{current_path}/tmp/pids/resque_worker_#{i}.pid"
       if remote_file_exists?(pid)
@@ -57,7 +57,7 @@ namespace :resque do
 
   desc "Restart Resque"
   task :restart do
-    stop_workers
-    start_workers
+    stop
+    start
   end
 end
