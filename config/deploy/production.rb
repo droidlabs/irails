@@ -16,9 +16,4 @@ set :use_sudo, false
 set :user, 'ssh_username'
 set :password, 'ssh_password'
 set :port, 22
-
-set :db_username, "DB_USER_NAME"
-set(:db_name_development) { application + "_development" }
-set(:db_name_test)        { application + "_test" }
-set(:db_name_production)  { application + "_production" }
-set(:db_name_staging)     { application + "_staging" }
+set :db_username, "root"
