@@ -1,3 +1,5 @@
+set(:resque_scheduler_verbosity, 1)
+
 def remote_process_exists?(pid_file)
   capture("ps -p $(cat #{pid_file}) ; true").strip.split("\n").size == 2
 end
@@ -7,7 +9,7 @@ namespace :resque_scheduler do
   task :start do
     pid = "./tmp/pids/resque_scheduler.pid"
       run "cd #{current_path} && RAILS_ENV=#{rails_env}
-          PIDFILE=#{pid} BACKGROUND=yes LOGFILE=./resque_scheduler.log VVERBOSE=#{verbosity}  \
+          PIDFILE=#{pid} BACKGROUND=yes LOGFILE=./resque_scheduler.log VVERBOSE=#{resque_scheduler_verbosity}  \
           #{rake_cmd} resque:scheduler"
   end
 
