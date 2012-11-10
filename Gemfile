@@ -14,7 +14,7 @@ gem 'kaminari', '0.13.0'
 gem 'gritter', '1.0.1'
 gem 'seedbank', '0.0.8'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
-gem 'navigation_link_to'
+gem 'navigation_link_to', '0.0.1'
 
 # serialization
 gem 'yell', '0.12.0'
@@ -43,12 +43,12 @@ group :test, :development do
 end
 
 group :development do
-  gem 'rails_best_practices', '1.10.1'
+  gem 'rails_best_practices', '1.12.0'
   gem 'capistrano', '2.11.2'
   gem 'capistrano-rbenv'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
-  gem 'thin'
+  gem 'thin', '1.5.0'
   gem 'bullet'
 end
 
