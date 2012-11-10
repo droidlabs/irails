@@ -64,6 +64,7 @@ group :test do
   gem 'simplecov', '0.7.1', require: false
   gem 'spork', '0.9.0'
   gem 'mocha', '0.12.7'
+  gem 'poltergeist'
 end
 
 group :staging, :production do

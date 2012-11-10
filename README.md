@@ -19,6 +19,10 @@ Simple template for Rails 3.2 based projects
 * Configure config/deploy/staging.rb
 * $ cap deploy:setup
 
+## Setup javascript testing webdriver
+
+* $ brew update && brew install phantomjs
+
 ## Data migrations
 
 * Generate data migration
