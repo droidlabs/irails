@@ -17,7 +17,7 @@ gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 gem 'navigation_link_to', '0.0.1'
 
 # serialization
-gem 'yell', '0.12.0'
+gem 'yell', '1.2.0'
 gem 'json', '1.7.5'
 
 # admin panel
