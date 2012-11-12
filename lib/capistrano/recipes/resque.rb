@@ -18,10 +18,6 @@ namespace :resque do
           LOGFILE=./resque-worker#{i}.log VVERBOSE=#{resque_verbosity}  \
           #{rake_cmd} environment resque:work &"
     end
-    pid_scheduler = "./tmp/pids/resque_scheduler.pid"
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} \
-        PIDFILE=#{pid_scheduler} BACKGROUND=yes LOGFILE=./log/resque-scheduler.log VVERBOSE=#{resque_verbosity} VERBOSE=#{resque_verbosity} \
-        #{rake_cmd} environment resque:scheduler &"
   end
 
   desc "Quit running Resque workers"
@@ -39,19 +35,6 @@ namespace :resque do
       else
         logger.important("No PIDs found. Check if Resque is running.", "Resque")
       end
-    end
-
-    pid_scheduler = "#{current_path}/tmp/pids/resque_scheduler.pid"
-    if remote_file_exists?(pid_scheduler)
-      if remote_process_exists?(pid_scheduler)
-        logger.important("Stopping...", "Resque Scheduler")
-        run "#{try_sudo} kill `cat #{pid_scheduler}`"
-      else
-        run "rm #{pid_scheduler}"
-        logger.important("Resque Scheduler is not running.", "Resque")
-      end
-    else
-      logger.important("No Scheduler PID found. Check if Resque is running.", "Resque")
     end
   end
 

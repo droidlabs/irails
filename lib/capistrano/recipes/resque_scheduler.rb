@@ -7,9 +7,9 @@ end
 namespace :resque_scheduler do
   desc "Start Resque scheduler"
   task :start do
-    pid = "./tmp/pids/resque_scheduler.pid"
+    pid = "#{current_path}/tmp/pids/resque_scheduler.pid"
       run "cd #{current_path} && RAILS_ENV=#{rails_env}
-          PIDFILE=#{pid} BACKGROUND=yes LOGFILE=./resque_scheduler.log VVERBOSE=#{resque_scheduler_verbosity}  \
+          PIDFILE=#{pid} BACKGROUND=yes LOGFILE=#{current_path}/resque_scheduler.log VVERBOSE=#{resque_scheduler_verbosity}  \
           #{rake_cmd} resque:scheduler"
   end
 
