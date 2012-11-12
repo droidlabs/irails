@@ -65,9 +65,11 @@ group :test do
   gem 'spork', '0.9.0'
   gem 'mocha', '0.12.7'
   gem 'poltergeist'
+  gem 'rack-contrib'
 end
 
 group :staging, :production do
   gem 'mysql2', '0.3.11'
   gem 'exception_notification', '3.0.0'
+  # gem 'airbrake', '3.1.6'
 end
