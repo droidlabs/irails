@@ -12,11 +12,11 @@ namespace :resque do
   task :start do
     puts "Starting #{resque_num_of_queues} worker(s) with QUEUE: #{resque_queue_name}"
     resque_num_of_queues.times do |i|
-      pid = "./tmp/pids/resque_worker_#{i}.pid"
+      pid = "#{current_path}/tmp/pids/resque_worker_#{i}.pid"
       run "cd #{current_path} && RAILS_ENV=#{rails_env} QUEUE=#{resque_queue_name} \
           INTERVAL=#{resque_polling_interval} PIDFILE=#{pid} BACKGROUND=yes \
-          LOGFILE=./resque-worker#{i}.log VVERBOSE=#{resque_verbosity}  \
-          #{rake_cmd} environment resque:work &"
+          LOGFILE=#{current_path}/log/resque-worker#{i}.log VVERBOSE=#{resque_verbosity}  \
+          #{rake_cmd} environment resque:work"
     end
   end
 

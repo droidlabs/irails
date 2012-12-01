@@ -14,10 +14,22 @@ Simple template for Rails 3.2 based projects
 * $ bundle install
 * $ rake db:setup
 
-## Setup deploy to staging
+## Deploy to staging
 
-* Configure config/deploy/staging.rb
+### Setup
+
+* $ brew install ssh-copy-id
+* $ ssh-copy-id username@hostname
+* configure config/deploy/staging.rb
 * $ cap deploy:setup
+
+### Usefull commands
+* deploy with migrations:
+* $ cap deploy:migrations
+* connect via ssh
+* $ cap ssh
+* show application logs
+* $ cap log
 
 ## Setup javascript testing webdriver
 

@@ -23,15 +23,3 @@ after   'deploy:update_code', 'deploy:assets:precompile'
 # resque
 # after   'deploy:restart', 'resque:restart'
 # after   'deploy:restart', 'resque_scheduler:restart'
-
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, roles: :app, except: { no_release: true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-  task :first do
-    deploy.update
-    db.setup
-  end
-end

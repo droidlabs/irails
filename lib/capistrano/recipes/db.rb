@@ -50,10 +50,10 @@ production:
 
   desc "Setup DB data"
   task :setup do
-    run "cd #{latest_release} && RAILS_ENV=#{rails_env} rake db:setup"
+    run "cd #{latest_release} && #{rake_cmd} db:setup"
   end
 
   task :migrate_data do
-    run "cd #{release_path} && RAILS_ENV=#{rails_env} rake data:migrate"
+    run "cd #{release_path} && #{rake_cmd} data:migrate"
   end
 end
