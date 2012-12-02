@@ -30,6 +30,8 @@ Simple template for Rails 3.2 based projects
 * $ cap ssh
 * show application logs
 * $ cap log
+* start rails console
+* $ cap console
 
 ## Setup javascript testing webdriver
 
