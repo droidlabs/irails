@@ -31,7 +31,7 @@ gem 'stripe', '1.7.8'
 gem 'jquery-rails', '2.1.4'
 gem 'sass-rails', '3.2.5'
 group :assets do
-  gem 'bourbon', '2.1.2'
+  gem 'bourbon', '2.1.3'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.3.0'
   gem 'execjs', '1.4.0'
@@ -43,9 +43,9 @@ group :test, :development do
 end
 
 group :development do
-  gem 'rails_best_practices', '1.13.0'
+  gem 'rails_best_practices', '1.13.1'
   gem 'capistrano', '2.13.5'
-  gem 'capistrano-rbenv', '0.0.6'
+  gem 'capistrano-rbenv', '0.0.7'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
   gem 'thin', '1.5.0'
@@ -62,7 +62,7 @@ group :test do
   gem 'pickle', '0.4.11'
   gem 'email_spec', '1.4.0'
   gem 'simplecov', '0.7.1', require: false
-  gem 'spork', '0.9.0'
+  gem 'spork', '0.9.2'
   gem 'mocha', '0.12.7'
   gem 'poltergeist'
   gem 'rack-contrib'
