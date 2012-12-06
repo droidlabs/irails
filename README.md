@@ -16,10 +16,11 @@ Simple template for Rails 3.2 based projects
 
 ## Deploy to staging
 
-### Setup
-
+### Setup SSH Access
 * $ brew install ssh-copy-id
 * $ ssh-copy-id username@hostname
+
+### First Server Setup
 * configure config/deploy/staging.rb
 * $ cap deploy:setup
 
