@@ -2,9 +2,12 @@ class Subscription < ActiveRecord::Base
   DEV_CARD = 'dev_card'
   default_value_for :plan, configatron.subscription.default_plan
 
+  attr_accessor :number, :number_writer
+
   attr_accessible :exp_month, :exp_year, :last_four_digits, :cardholder_name, :card_type
 
   belongs_to :user
+  has_many  :invoices
 
   validates  :plan, inclusion: configatron.subscription.plans, presence: true
 
@@ -13,6 +16,14 @@ class Subscription < ActiveRecord::Base
 
   def use_stripe?
     self.class.stripe_key_present? && !self.class.test_env?
+  end
+
+  def number
+    number_writer || (last_four_digits ? "**** **** **** #{last_four_digits}" : '')
+  end
+
+  def number=(value)
+    self.number_writer = value
   end
 
   def card_provided?

@@ -54,7 +54,7 @@ end
 
 group :test do
   gem 'rspec-rails', '2.12.0'
-  gem 'cucumber-rails', '1.3.0'
+  gem 'cucumber-rails', '1.3.0', require: false
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.1.0'

@@ -32,6 +32,7 @@ article
         = f.input :full_name, required: true
         = f.input :number, required: true, placeholder: '1234-5678-9123-4567', input_html: {autocomplete: :off}
 
-        = f.input :card_type, input_html: {readonly: true}
+        = f.input :card_type, as: :hidden
         = f.input :expires_at, required: true, as: :date, discard_day: true, wrapper_html: {class: 'clearfix'}
+        = f.input :cvc
       = f.button :submit, 'Update'

@@ -32,6 +32,6 @@ class Services::Subscriptions
   end
 
   def subscription
-    @subscription ||= current_user.subscription rescue nil
+    @subscription ||= current_user.subscription || current_user.create_subscription
   end
 end

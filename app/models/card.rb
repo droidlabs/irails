@@ -1,7 +1,7 @@
 class Card
   include ActiveModel::Validations
 
-  attr_accessor :full_name, :number, :card_type, :expires_at, :plan, :to_key
+  attr_accessor :full_name, :number, :card_type, :expires_at, :cvc, :plan, :to_key
 
   validates :full_name, :number, :expires_at, :plan, presence: true
   validate :expires_in_future
@@ -12,7 +12,7 @@ class Card
       attributes[:"expires_at(1i)"].to_i,
       attributes[:"expires_at(2i)"].to_i,
       attributes[:"expires_at(3i)"].to_i) rescue nil
-    %w[number full_name plan].each do |param|
+    %w[number full_name plan cvc].each do |param|
       send("#{param}=", attributes[param])
     end
   end
@@ -20,6 +20,7 @@ class Card
   def stripe_attributes
     {
       name: full_name,
+      cvc: cvc,
       number: number.gsub(/[^0-9]/, ''),
       exp_year: expires_at.year,
       exp_month: expires_at.month

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104101943) do
+ActiveRecord::Schema.define(:version => 20121224142725) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,6 +45,25 @@ ActiveRecord::Schema.define(:version => 20121104101943) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "invoices", :force => true do |t|
+    t.integer  "subscription_id"
+    t.datetime "billed_at"
+    t.integer  "amount"
+    t.string   "card_number",       :limit => 30
+    t.integer  "attemp_count"
+    t.string   "status",            :limit => 30
+    t.string   "invoice_uid",       :limit => 30
+    t.text     "stripe_attributes"
+    t.string   "charge_uid"
+    t.string   "card_type"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "invoices", ["invoice_uid"], :name => "index_invoices_on_invoice_uid"
+  add_index "invoices", ["status"], :name => "index_invoices_on_status"
+  add_index "invoices", ["subscription_id"], :name => "index_invoices_on_subscription_id"
 
   create_table "subscriptions", :force => true do |t|
     t.integer  "user_id"
