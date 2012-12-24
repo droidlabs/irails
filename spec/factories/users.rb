@@ -2,9 +2,7 @@ FactoryGirl.define do
   factory :user do
     full_name "Bruce Lee"
     email { generate(:email) }
-    if User.respond_to?(:_has_subscription)
-      subscription { |u| u.association(:subscription) }
-    end
+    subscription { |u| u.association(:subscription) }
     password "foobar"
     password_confirmation { |u| u.password }
   end
@@ -15,5 +13,9 @@ FactoryGirl.define do
 
   factory :not_confirmed_user, parent: :user do |u|
     confirmed_at nil
+  end
+
+  factory :blocked_user, parent: :user do |u|
+    subscription { |u| u.association(:blocked_subscription) }
   end
 end
