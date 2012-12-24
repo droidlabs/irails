@@ -55,6 +55,7 @@ group :development do
   gem 'thin', '1.5.0'
   gem 'bullet', '4.2.0'
   gem 'foreman', '0.60.2'
+  gem 'pry-rails'
 end
 
 group :test do
