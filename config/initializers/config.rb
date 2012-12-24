@@ -10,6 +10,7 @@ configatron.aws.access_key = ""
 configatron.aws.secret_key = ""
 
 # subscriptions
+configatron.subscription.enabled = false
 configatron.subscription.stripe_key = nil
 configatron.subscription.plans = %w[free paid]
 configatron.subscription.free_plans = %w[free]
@@ -23,4 +24,6 @@ configatron.exceptions.notify_recipients = %w[noreply@example.com]
 case Rails.env.to_sym
 when :development
   configatron.host = 'localhost:3000'
+when :test
+  configatron.subscription.enabled = true
 end
