@@ -93,7 +93,7 @@ class SubscriptionEvent
   end
 
   def customer_subscription_trial_will_end
-    SubscriptionMailer.trial_will_end(subscription).deliver
+    # SubscriptionMailer.trial_will_end(subscription).deliver
   end
 
   def customer_updated
