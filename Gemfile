@@ -7,7 +7,7 @@ gem 'slim-rails', '1.0.3'
 gem 'simple_form', '2.0.4'
 gem 'configatron', '2.9.1'
 gem 'default_value_for', '2.0.1'
-gem 'paperclip', '3.3.1'
+gem 'paperclip', '3.4.0'
 gem 'client_side_validations', '3.2.1'
 gem 'client_side_validations-simple_form', '2.0.1'
 gem 'kaminari', '0.14.1'
@@ -63,9 +63,9 @@ group :test do
   gem 'email_spec', '1.4.0'
   gem 'simplecov', '0.7.1', require: false
   gem 'spork', '0.9.2'
-  gem 'mocha', '0.12.7'
-  gem 'poltergeist'
-  gem 'rack-contrib'
+  gem 'mocha', '0.13.1'
+  gem 'poltergeist', '1.0.2'
+  gem 'rack-contrib', '1.1.0'
 end
 
 group :staging, :production do
