@@ -44,7 +44,7 @@
 	top: 0 !important;
 	left: 50%;
 	width: auto !important;
-	
+
 	.gritter-item {
 		left: -50%;
 		position: relative;
@@ -52,7 +52,7 @@
 		background: #fff;
 		border: 0;
 		padding: 0 30px;
-		@include border-radius(0 0 4px 4px);
+		border-radius: 0 0 4px 4px;
 		@include box-shadow(0 0 4px rgba(0, 0, 0, 0.5));
 		.gritter-close {
 			background: image-url('notification-close.png') 0 0 no-repeat;

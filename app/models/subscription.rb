@@ -39,7 +39,8 @@ class Subscription < ActiveRecord::Base
     when :free_to_free
       unblock!
     end
-    update_attribute(:plan, plan.to_s)
+    self.plan = plan.to_s
+    self.save if persisted?
   end
 
   def should_change_card?
@@ -97,7 +98,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def block!
-    update_attribute(:blocked_at, Time.now) unless free_plan?(plan)
+    self.blocked_at = Time.now unless free_plan?(plan)
+    self.save if persisted?
     delete_stripe_subscription_plan
   end
 

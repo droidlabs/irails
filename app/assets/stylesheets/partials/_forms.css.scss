@@ -26,7 +26,7 @@ form {
 		color: #222;
 		font-size: 12px;
 		border: 5px solid #ebebeb;
-		@include border-radius(6px);
+		border-radius: 6px;
 		@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.05) inset);
 		&:focus {
 			border-color: #d7d7d7;
@@ -49,7 +49,7 @@ form {
 		text-decoration: none;
 		@include box-shadow(0 1px 1px rgba(255, 255, 255, 0.3) inset, 0 0 4px rgba(0, 0, 0, 0.2));
 		@include linear-gradient(#5d6877, #464e5a);
-		@include border-radius(4px);
+		border-radius: 4px;
 		&:hover {
 			@include linear-gradient(#697687, #525b69);
 		}
