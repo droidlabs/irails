@@ -7,7 +7,6 @@ set :default_stage, "staging"
 set :deploy_via, :remote_cache
 set :keep_releases, 5
 set :scm, :git
-set(:rake_cmd) {"#{bundle_cmd rescue 'bundle'} exec rake RAILS_ENV=#{rails_env}"}
 
 before  'deploy:setup', 'db:create_config'
 after   'deploy:setup', 'deploy:first'
