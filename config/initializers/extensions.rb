@@ -1,3 +1,6 @@
 require 'services/logger'
 require 'services/result'
 require 'services/base'
+require 'workers/adapters/resque'
+require 'workers/adapters/sidekiq'
+require 'workers/base'

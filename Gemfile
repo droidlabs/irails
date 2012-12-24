@@ -16,6 +16,10 @@ gem 'seedbank', '0.2.0'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 gem 'navigation_link_to', '0.0.1'
 
+# background jobs
+gem 'resque'
+# gem 'sidekiq'
+
 # serialization
 gem 'yell', '1.2.1'
 gem 'json', '1.7.5'
@@ -50,6 +54,7 @@ group :development do
   gem 'quiet_assets', '1.0.1'
   gem 'thin', '1.5.0'
   gem 'bullet', '4.2.0'
+  gem 'foreman', '0.60.2'
 end
 
 group :test do

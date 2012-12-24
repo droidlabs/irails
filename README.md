@@ -5,7 +5,7 @@
 
 Simple template for Rails 3.2 based projects
 
-## Installation
+## Getting Started
 
 * $ git clone git://github.com/droidlabs/irails.git myapp
 * $ cd ./myapp
@@ -13,6 +13,8 @@ Simple template for Rails 3.2 based projects
 * Configure your config/database.yml
 * $ bundle install
 * $ rake db:setup
+* Run server & workers
+* $ foreman start
 
 ## Deploy to staging
 

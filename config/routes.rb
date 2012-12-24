@@ -1,5 +1,6 @@
 Irails::Application.routes.draw do
   ActiveAdmin.routes(self)
+  mount Resque::Server.new, at: "/resque" if defined?(Resque)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
@@ -9,7 +10,6 @@ Irails::Application.routes.draw do
   resource :subscription, only: [:edit, :update] do
     get :card_details
   end
-
 
   root to: 'pages#show', id: 'home'
 end
