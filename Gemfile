@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'devise', '2.1.2'
+gem 'devise', '2.2.2'
 gem 'slim-rails', '1.0.3'
 
 gem 'simple_form', '2.0.4'
@@ -21,19 +21,19 @@ gem 'resque'
 # gem 'sidekiq'
 
 # serialization
-gem 'yell', '1.2.1'
-gem 'json', '1.7.5'
+gem 'yell', '1.2.3'
+gem 'json', '1.7.6'
 
 # admin panel
 gem 'activeadmin', '0.5.1'
 gem 'meta_search', '1.1.3'
 
 # payments
-gem 'stripe', '1.7.8'
+gem 'stripe', '1.7.9'
 
 # assets
 gem 'jquery-rails', '2.1.4'
-gem 'sass-rails', '3.2.5'
+gem 'sass-rails', '3.2.6'
 group :assets do
   gem 'bourbon', '3.0.1'
   gem 'coffee-rails', '3.2.2'
@@ -42,7 +42,7 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'sqlite3', '1.3.6'
+  gem 'sqlite3', '1.3.7'
   gem 'launchy', '2.1.2'
 end
 
@@ -53,13 +53,13 @@ group :development do
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
   gem 'thin', '1.5.0'
-  gem 'bullet', '4.2.0'
-  gem 'foreman', '0.60.2'
+  gem 'bullet', '4.3.0'
+  gem 'foreman', '0.61.0'
   gem 'pry-rails'
 end
 
 group :test do
-  gem 'rspec-rails', '2.12.0'
+  gem 'rspec-rails', '2.12.2'
   gem 'cucumber-rails', '1.3.0', require: false
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
