@@ -35,6 +35,17 @@ Spork.prefork do
     # examples within a transaction, remove the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = true
+
+    # require step definitions
+    Dir[Rails.root.join("spec/support/step_definitions/*.rb")].each do |file|
+      begin
+        require(file)
+        module_name = file.to_s.split('/').last.split('.').first.camelize
+        config.include module_name.constantize
+      rescue
+
+      end
+    end
   end
 end
 

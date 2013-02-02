@@ -61,17 +61,18 @@ end
 
 group :test do
   gem 'rspec-rails', '2.12.2'
-  gem 'cucumber-rails', '1.3.0', require: false
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.2.0'
-  gem 'capybara', '1.1.4'
-  gem 'pickle', '0.4.11'
+  gem 'capybara', '2.0.2'
   gem 'email_spec', '1.4.0'
   gem 'simplecov', '0.7.1', require: false
   gem 'spork', '0.9.2'
-  gem 'mocha', '0.13.2'
-  gem 'poltergeist', '1.0.2'
+  gem 'mocha', '0.13.2', require: 'mocha/setup'
+  gem 'turnip'
+
+  # javascript driver:
+  gem 'poltergeist', '1.0.2', git: 'git://github.com/jonleighton/poltergeist.git'
   gem 'rack-contrib', '1.1.0'
 end
 
