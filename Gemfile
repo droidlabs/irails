@@ -11,7 +11,7 @@ gem 'paperclip', '3.4.0'
 gem 'client_side_validations', '3.2.1'
 gem 'client_side_validations-simple_form', '2.0.1'
 gem 'kaminari', '0.14.1'
-gem 'gritter', '1.0.2'
+gem 'gritter', '1.0.3'
 gem 'seedbank', '0.2.0'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 gem 'navigation_link_to', '0.0.1'
@@ -48,7 +48,7 @@ group :test, :development do
 end
 
 group :development do
-  gem 'rails_best_practices', '1.13.2'
+  gem 'rails_best_practices', '1.13.3'
   gem 'capistrano', '2.14.1'
   gem 'capistrano-rbenv', '0.0.8'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
