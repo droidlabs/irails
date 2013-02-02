@@ -43,7 +43,6 @@ Spork.prefork do
         module_name = file.to_s.split('/').last.split('.').first.camelize
         config.include module_name.constantize
       rescue
-
       end
     end
   end
