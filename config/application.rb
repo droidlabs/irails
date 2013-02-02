@@ -46,5 +46,11 @@ module Irails
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    config.roadie.enabled = true
+
+    config.to_prepare do
+      Devise::Mailer.layout "mailer"
+    end
   end
 end

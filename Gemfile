@@ -15,6 +15,7 @@ gem 'gritter', '1.0.3'
 gem 'seedbank', '0.2.0'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 gem 'navigation_link_to', '0.0.1'
+gem 'roadie'
 
 # background jobs
 gem 'resque'
