@@ -11,7 +11,7 @@ set :scm, :git
 before  'deploy:setup', 'db:create_config'
 after   'deploy:setup', 'deploy:first'
 
-before  'deploy:assets:precompile', 'db:create_symlink'
+after   'deploy:update_code', 'db:create_symlink'
 after   'deploy:create_symlink', 'deploy:cleanup'
 after   'deploy:migrate', 'db:migrate_data'
 
