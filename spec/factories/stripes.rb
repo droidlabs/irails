@@ -1,3 +1,6 @@
+module Stripe
+  class Event; end;
+end
 class StripeStub
   def success_charge(subscription, opts = {})
     opts[:paid] = true

@@ -15,7 +15,8 @@ class Subscription < ActiveRecord::Base
   after_destroy :delete_stripe_customer, if: :use_stripe?
 
   def use_stripe?
-    self.class.stripe_key_present? && !self.class.test_env?
+    defined?(Stripe) && !self.class.test_env? &&
+    self.class.stripe_key_present?
   end
 
   def number
