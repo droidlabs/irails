@@ -8,10 +8,10 @@ header
           - if current_user.avatar.exists?
             = image_tag(current_user.avatar.url(:small))
           = current_user.full_name
-        li= navigation_link_to 'Settings', edit_user_registration_path
+        = navigation_link_to 'Settings', edit_user_registration_path
         = content_tag :li, navigation_link_to('Billing Details', edit_subscription_path) if has_subscriptions?
-        li= navigation_link_to 'Logout', destroy_user_session_path, method: :delete
+        = navigation_link_to 'Logout', destroy_user_session_path, method: :delete
       - else
-        li.first= navigation_link_to 'Registration', new_user_registration_path
-        li= navigation_link_to 'Login', new_user_session_path
+        = navigation_link_to 'Registration', new_user_registration_path, class: 'first'
+        = navigation_link_to 'Login', new_user_session_path
   .clear
