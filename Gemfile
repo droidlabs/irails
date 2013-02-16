@@ -45,12 +45,12 @@ end
 
 group :test, :development do
   gem 'sqlite3', '1.3.7'
-  gem 'launchy', '2.1.2'
+  gem 'launchy', '2.2.0'
 end
 
 group :development do
-  gem 'rails_best_practices', '1.13.3'
-  gem 'capistrano', '2.14.1'
+  gem 'rails_best_practices', '1.13.4'
+  gem 'capistrano', '2.14.2'
   gem 'capistrano-rbenv', '0.0.8'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.1'
@@ -64,7 +64,7 @@ group :test do
   gem 'rspec-rails', '2.12.2'
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
-  gem 'factory_girl_rails', '4.2.0'
+  gem 'factory_girl_rails', '4.2.1'
   gem 'capybara', '2.0.2'
   gem 'email_spec', '1.4.0'
   gem 'simplecov', '0.7.1', require: false
