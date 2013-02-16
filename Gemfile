@@ -5,7 +5,7 @@ gem 'devise', '2.2.3'
 gem 'slim-rails'
 
 gem 'simple_form', '2.0.4'
-gem 'configatron', '2.9.1'
+gem 'configatron', '2.10.0'
 gem 'default_value_for', '2.0.1'
 gem 'paperclip', '3.4.0'
 gem 'client_side_validations', '3.2.1'
