@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 gem 'devise', '2.2.3'
-gem 'slim-rails', '1.1.0'
+gem 'slim-rails'
 
 gem 'simple_form', '2.0.4'
 gem 'configatron', '2.9.1'
@@ -23,7 +23,7 @@ gem 'resque'
 
 # serialization
 gem 'yell', '1.2.3'
-gem 'json', '1.7.6'
+gem 'json', '1.7.7'
 
 # admin panel
 gem 'activeadmin', '0.5.1'
@@ -33,10 +33,10 @@ gem 'meta_search', '1.1.3'
 # gem 'stripe', '1.7.9'
 
 # assets
-gem 'jquery-rails', '2.2.0'
-gem 'sass-rails', '3.2.6'
+gem 'jquery-rails', '2.2.1'
+gem 'sass-rails'
 group :assets do
-  gem 'bourbon', '3.0.1'
+  gem 'bourbon'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.3.0'
   gem 'execjs', '1.4.0'
@@ -79,6 +79,6 @@ end
 
 group :staging, :production do
   gem 'mysql2', '0.3.11'
-  gem 'exception_notification', '3.0.0'
+  gem 'exception_notification', '3.0.1'
   # gem 'airbrake', '3.1.6'
 end
