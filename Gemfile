@@ -65,7 +65,7 @@ end
 
 group :test do
   gem 'rspec-rails', '2.12.2'
-  # gem 'mongoid-rspec', '>= 1.6.0'
+  gem 'mongoid-rspec', '>= 1.6.0'
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.2.1'

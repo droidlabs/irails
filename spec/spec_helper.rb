@@ -14,6 +14,8 @@ Spork.prefork do
   Rails.application.railties.all { |r| r.eager_load! }
   require 'rspec/rails'
   require "email_spec"
+  require "rails/mongoid"
+  Spork.trap_class_method(Rails::Mongoid, :load_models)
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -52,6 +54,6 @@ end
 Spork.each_run do
   FactoryGirl.reload
 
-  DatabaseCleaner.strategy = :truncation
-  DatabaseCleaner.clean
+  DatabaseCleaner[:mongoid].strategy = :truncation
+  DatabaseCleaner[:mongoid].clean
 end
