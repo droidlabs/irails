@@ -1,6 +1,8 @@
-class Subscription < ActiveRecord::Base
+class Subscription
+  include Mongoid::Document
+  include Mongoid::Timestamps
   DEV_CARD = 'dev_card'
-  default_value_for :plan, configatron.subscription.default_plan
+  # default_value_for :plan, configatron.subscription.default_plan
 
   attr_accessor :number, :number_writer
 
