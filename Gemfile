@@ -12,7 +12,6 @@ gem 'client_side_validations', '3.2.1'
 gem 'client_side_validations-simple_form', '2.0.1'
 gem 'kaminari', '0.14.1'
 gem 'gritter', '1.0.3'
-gem 'seedbank', '0.2.0'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 gem 'navigation_link_to', '0.0.1'
 gem 'roadie'
@@ -26,7 +25,8 @@ gem 'yell', '1.2.3'
 gem 'json', '1.7.7'
 
 # admin panel
-gem 'activeadmin', '0.5.1'
+# TODO: enable after fixing issue loading with mongoid
+# gem 'activeadmin-mongoid', git: 'git://github.com/simplybusiness/activeadmin-mongoid.git'
 gem 'meta_search', '1.1.3'
 
 # payments
@@ -44,8 +44,10 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'sqlite3', '1.3.7'
+  # gem 'sqlite3', '1.3.7'
   gem 'launchy', '2.2.0'
+  gem 'mongoid', '~> 3.0.0'
+  gem 'bson_ext'
 end
 
 group :development do
@@ -62,6 +64,7 @@ end
 
 group :test do
   gem 'rspec-rails', '2.12.2'
+  gem 'mongoid-rspec', '>= 1.6.0'
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.2.1'
@@ -73,7 +76,7 @@ group :test do
   gem 'turnip'
 
   # javascript driver:
-  gem 'poltergeist', '1.0.2', git: 'git://github.com/jonleighton/poltergeist.git'
+  gem 'poltergeist', '1.1.0', git: 'git://github.com/jonleighton/poltergeist.git'
   gem 'rack-contrib', '1.1.0'
 end
 

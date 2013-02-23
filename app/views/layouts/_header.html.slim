@@ -5,8 +5,8 @@ header
     ul
       - if user_signed_in?
         li.first.name
-          - if current_user.avatar.exists?
-            = image_tag(current_user.avatar.url(:small))
+          / - if current_user.avatar.exists?
+          /   = image_tag(current_user.avatar.url(:small))
           = current_user.full_name
         = navigation_link_to 'Settings', edit_user_registration_path
         = content_tag :li, navigation_link_to('Billing Details', edit_subscription_path) if has_subscriptions?
