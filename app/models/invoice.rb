@@ -1,6 +1,8 @@
-class Invoice < ActiveRecord::Base
+class Invoice 
+  include Mongoid::Document
+  include Mongoid::Timestamps
   belongs_to :subscription
-  serialize :stripe_attributes, Hash
+  # serialize :stripe_attributes, Hash
 
   def amount_in_dollars
     (amount / 100).to_i
