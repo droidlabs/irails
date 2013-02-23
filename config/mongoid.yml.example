@@ -15,15 +15,21 @@ staging:
   sessions:
     default:
       database: irails_staging
+      hosts:
+        - localhost:27017
 
 production:
   <<: *defaults
   sessions:
     default:
       database: irails_production
+      hosts:
+        - localhost:27017
 
 test:
   <<: *defaults
   sessions:
     default:
       database: irails_test
+      hosts:
+        - localhost:27017
