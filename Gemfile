@@ -53,7 +53,7 @@ group :development do
   gem 'capistrano', '2.14.2'
   gem 'capistrano-rbenv', '0.0.8'
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
-  gem 'quiet_assets', '1.0.1'
+  gem 'quiet_assets', '1.0.2'
   gem 'thin', '1.5.0'
   gem 'bullet', '4.3.0'
   gem 'foreman', '0.61.0'
@@ -61,7 +61,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '2.12.2'
+  gem 'rspec-rails', '2.13.0'
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.2.1'
