@@ -6,8 +6,4 @@ FactoryGirl.define do
   sequence :login do |n|
     "somebody#{n}"
   end
-
-  sequence :stripe_customer_uid do |n|
-    "cus_123234234#{n}"
-  end
 end

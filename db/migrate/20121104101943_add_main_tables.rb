@@ -33,23 +33,6 @@ class AddMainTables < ActiveRecord::Migration
     add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
     add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-    create_table "subscriptions", :force => true do |t|
-      t.integer  "user_id"
-      t.string   "plan"
-      t.string   "customer_uid"
-      t.datetime "blocked_at"
-      t.datetime "created_at",       :null => false
-      t.datetime "updated_at",       :null => false
-      t.string   "customer_card"
-      t.integer  "exp_year"
-      t.integer  "exp_month"
-      t.integer  "last_four_digits"
-      t.string   "cardholder_name"
-      t.string   "card_type"
-    end
-
-    add_index "subscriptions", ["user_id"], :name => "index_subscriptions_on_user_id"
-
     create_table "users", :force => true do |t|
       t.string   "email",                  :default => "", :null => false
       t.string   "encrypted_password",     :default => "", :null => false

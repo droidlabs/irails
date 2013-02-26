@@ -9,13 +9,6 @@ configatron.aws.bucket = ""
 configatron.aws.access_key = ""
 configatron.aws.secret_key = ""
 
-# subscriptions
-configatron.subscription.enabled = false
-configatron.subscription.stripe_key = nil
-configatron.subscription.plans = %w[free paid]
-configatron.subscription.free_plans = %w[free]
-configatron.subscription.default_plan = 'free'
-
 # background jobs
 configatron.background_jobs.namespace = 'iRails'
 configatron.background_jobs.auth = true
@@ -32,5 +25,4 @@ when :development
   configatron.host = 'localhost:3000'
   configatron.background_jobs.namespace = false
 when :test
-  configatron.subscription.enabled = true
 end

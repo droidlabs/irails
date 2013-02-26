@@ -29,9 +29,6 @@ gem 'json', '1.7.7'
 gem 'activeadmin', '0.5.1'
 gem 'meta_search', '1.1.3'
 
-# payments
-# gem 'stripe', '1.7.9'
-
 # assets
 gem 'jquery-rails', '2.2.1'
 gem 'sass-rails'
