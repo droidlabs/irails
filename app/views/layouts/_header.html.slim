@@ -9,7 +9,6 @@ header
             = image_tag(current_user.avatar.url(:small))
           = current_user.full_name
         = navigation_link_to 'Settings', edit_user_registration_path
-        = content_tag :li, navigation_link_to('Billing Details', edit_subscription_path) if has_subscriptions?
         = navigation_link_to 'Logout', destroy_user_session_path, method: :delete
       - else
         = navigation_link_to 'Registration', new_user_registration_path, class: 'first'
