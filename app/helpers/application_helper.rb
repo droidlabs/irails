@@ -27,8 +27,4 @@ module ApplicationHelper
   def controller_action_class
     "#{controller.controller_name}-#{restfull_action_name}"
   end
-
-  def has_subscriptions?
-    current_user && current_user.respond_to?(:subscription)
-  end
 end
