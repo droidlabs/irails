@@ -7,8 +7,8 @@ gem 'slim-rails'
 gem 'simple_form', '2.0.4'
 gem 'configatron', '2.10.0'
 gem 'default_value_for', '2.0.1'
-gem 'paperclip', '3.4.0'
-gem 'client_side_validations', '3.2.1'
+gem 'paperclip', '3.4.1'
+gem 'client_side_validations', '3.2.2'
 gem 'client_side_validations-simple_form', '2.0.1'
 gem 'kaminari', '0.14.1'
 gem 'gritter', '1.0.3'
@@ -22,7 +22,7 @@ gem 'resque'
 # gem 'sidekiq'
 
 # serialization
-gem 'yell', '1.2.3'
+gem 'yell', '1.3.0'
 gem 'json', '1.7.7'
 
 # admin panel
@@ -73,7 +73,7 @@ group :test do
   gem 'turnip'
 
   # javascript driver:
-  gem 'poltergeist', '1.0.2', git: 'git://github.com/jonleighton/poltergeist.git'
+  gem 'poltergeist', '1.1.0'
   gem 'rack-contrib', '1.1.0'
 end
 
