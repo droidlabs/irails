@@ -6,13 +6,10 @@ gem 'slim-rails'
 
 gem 'simple_form', '2.0.4'
 gem 'configatron', '2.10.0'
-gem 'default_value_for', '2.0.1'
 gem 'paperclip', '3.4.1'
 gem 'client_side_validations', '3.2.2'
 gem 'client_side_validations-simple_form', '2.0.1'
-gem 'kaminari', '0.14.1'
 gem 'gritter', '1.0.3'
-gem 'seedbank', '0.2.0'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
 gem 'navigation_link_to', '0.0.1'
 gem 'roadie'
@@ -46,14 +43,13 @@ group :test, :development do
 end
 
 group :development do
-  gem 'rails_best_practices', '1.13.4'
-  gem 'capistrano', '2.14.2'
-  gem 'capistrano-rbenv', '0.0.8'
+  gem 'rails_best_practices', '1.13.4', require: false
+  gem 'capistrano', '2.14.2', require: false
+  gem 'capistrano-rbenv', '0.0.10', require: false
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.2'
   gem 'thin', '1.5.0'
-  gem 'bullet', '4.3.0'
-  gem 'foreman', '0.61.0'
+  gem 'bullet', '4.3.1'
   gem 'pry-rails'
 end
 
@@ -68,10 +64,6 @@ group :test do
   gem 'spork', '0.9.2'
   gem 'mocha', '0.13.2', require: 'mocha/setup'
   gem 'turnip'
-
-  # javascript driver:
-  gem 'poltergeist', '1.1.0'
-  gem 'rack-contrib', '1.1.0'
 end
 
 group :staging, :production do
