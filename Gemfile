@@ -64,6 +64,7 @@ group :test do
   gem 'spork', '0.9.2'
   gem 'mocha', '0.13.2', require: 'mocha/setup'
   gem 'turnip'
+  gem 'rack-contrib', '1.1.0'
 end
 
 group :staging, :production do
