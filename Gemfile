@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'devise', '2.2.3'
 gem 'slim-rails'
 
 gem 'simple_form', '2.0.4'
 gem 'configatron', '2.10.0'
 gem 'paperclip', '3.4.1'
-gem 'client_side_validations', '3.2.2'
+gem 'client_side_validations', '3.2.5'
 gem 'client_side_validations-simple_form', '2.0.1'
 gem 'gritter', '1.0.3'
 gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
