@@ -8,6 +8,9 @@ set :deploy_via, :remote_cache
 set :keep_releases, 5
 set :scm, :git
 
+# set server type, passenger by default
+# set(:server_type, "unicorn")
+
 before  'deploy:setup', 'db:create_config'
 after   'deploy:setup', 'deploy:first'
 
