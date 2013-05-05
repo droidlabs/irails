@@ -15,16 +15,13 @@ gem 'navigation_link_to', '0.0.1'
 gem 'roadie'
 
 # background jobs
-gem 'resque'
 # gem 'sidekiq'
 
-# serialization
-gem 'yell', '1.3.0'
-gem 'json', '1.7.7'
+# services
+gem 'droid_services'
 
 # admin panel
 gem 'activeadmin', '0.5.1'
-gem 'meta_search', '1.1.3'
 
 # assets
 gem 'jquery-rails', '2.2.1'
@@ -43,18 +40,17 @@ group :test, :development do
 end
 
 group :development do
-  gem 'rails_best_practices', '1.13.4', require: false
   gem 'capistrano', '2.15.4', require: false
   gem 'capistrano-rbenv', '0.0.10', require: false
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.2'
-  gem 'thin', '1.5.0'
+  gem 'thin', '1.5.1'
   gem 'bullet', '4.6.0'
   gem 'pry-rails'
 end
 
 group :test do
-  gem 'rspec-rails', '2.13.0'
+  gem 'rspec-rails', '2.13.1'
   gem 'shoulda', '3.3.2'
   gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.2.1'
@@ -64,7 +60,6 @@ group :test do
   gem 'spork', '0.9.2'
   gem 'mocha', '0.13.2', require: 'mocha/setup'
   gem 'turnip'
-  gem 'rack-contrib', '1.1.0'
 end
 
 group :staging, :production do

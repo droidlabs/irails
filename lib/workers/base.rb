@@ -1,8 +1,14 @@
 # Start any worker with command: Workers::MyWorker.perform_async('test')
 class Workers::Base
-  include Services::Logger
-  include Workers::ResqueAdapter if defined?(Resque)
-  include Workers::SidekiqAdapter if defined?(Sidekiq)
+  extend ActiveSupport::Concern
+  include DroidServices::Extensions::HasLogger
+  include ::Sidekiq::Worker if defined?(Sidekiq)
+
+  def perform(*args)
+    perform!(*args)
+  rescue Exception => e
+    self.class.handle_exception(e)
+  end
 
   class << self
     def handle_exception(exception)
