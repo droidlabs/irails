@@ -28,9 +28,9 @@ gem 'meta_search', '1.1.3'
 
 # assets
 gem 'jquery-rails', '2.2.1'
-gem 'sass-rails'
+gem 'sass-rails', '3.2.6'
 group :assets do
-  gem 'bourbon'
+  gem 'bourbon', '3.1.6'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.3.0'
   gem 'execjs', '1.4.0'
@@ -44,12 +44,12 @@ end
 
 group :development do
   gem 'rails_best_practices', '1.13.4', require: false
-  gem 'capistrano', '2.14.2', require: false
+  gem 'capistrano', '2.15.4', require: false
   gem 'capistrano-rbenv', '0.0.10', require: false
   gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
   gem 'quiet_assets', '1.0.2'
   gem 'thin', '1.5.0'
-  gem 'bullet', '4.3.1'
+  gem 'bullet', '4.6.0'
   gem 'pry-rails'
 end
 
