@@ -1,7 +1,8 @@
 # Start any worker with command: Workers::MyWorker.perform_async('test')
+require 'has_active_logger'
 class Workers::Base
   extend ActiveSupport::Concern
-  include DroidServices::Extensions::HasLogger
+  include HasActiveLogger::Mixin
   include ::Sidekiq::Worker if defined?(Sidekiq)
 
   def perform(*args)
