@@ -1,0 +1,1 @@
+configatron.host = 'localhost.localdomain:3000'

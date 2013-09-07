@@ -1,69 +1,52 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-gem 'devise', '2.2.3'
-gem 'slim-rails'
-
-gem 'simple_form', '2.0.4'
-gem 'configatron', '2.10.0'
-gem 'paperclip', '3.4.1'
-gem 'client_side_validations', '3.2.5'
-gem 'client_side_validations-simple_form', '2.0.1'
-gem 'gritter', '1.0.3'
-gem 'data_migrate', git: 'git://github.com/droidlabs/data-migrate.git'
+gem 'rails', '4.0.0'
+gem 'mysql2', '0.3.12'
+gem 'slim-rails', '2.0.1'
+gem 'paperclip', '3.5.1'
+gem 'devise', '3.0.2'
+gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
+gem 'cyrax'
+
+gem 'simple_form', github: "plataformatec/simple_form"
+gem 'activeadmin', github: "gregbell/active_admin", branch: 'rails4'
+
+# emails styles
 gem 'roadie'
 
-# background jobs
-# gem 'sidekiq'
-
-# services
-gem 'droid_services'
-
-# admin panel
-gem 'activeadmin', '0.5.1'
-
 # assets
-gem 'jquery-rails', '2.2.1'
-gem 'sass-rails', '3.2.6'
-group :assets do
-  gem 'bourbon', '3.1.6'
-  gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '1.3.0'
-  gem 'execjs', '1.4.0'
-  gem 'therubyracer'
-end
-
-group :test, :development do
-  gem 'sqlite3', '1.3.7'
-  gem 'launchy', '2.2.0'
-end
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'therubyracer', platforms: :ruby
+gem 'droidcss'
+gem 'jquery-rails'
+gem 'jquery-turbolinks', '1.0.0'
+gem 'turbolinks'
 
 group :development do
-  gem 'capistrano', '2.15.4', require: false
-  gem 'capistrano-rbenv', '0.0.10', require: false
-  gem 'letter_opener', '0.0.2', git: 'git://github.com/droidlabs/letter_opener.git'
+  gem 'capistrano', require: false
+  gem 'letter_opener'
   gem 'quiet_assets', '1.0.2'
   gem 'thin', '1.5.1'
-  gem 'bullet', '4.6.0'
   gem 'pry-rails'
+
+  # gem 'capistrano-rbenv', require: false
+  # gem 'zeus'
 end
 
 group :test do
-  gem 'rspec-rails', '2.13.1'
-  gem 'shoulda', '3.3.2'
-  gem 'database_cleaner', '0.9.1'
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'shoulda', '3.5.0'
+  gem 'database_cleaner', '1.1.1'
   gem 'factory_girl_rails', '4.2.1'
-  gem 'capybara', '2.0.2'
+  gem 'capybara', '2.1.0'
   gem 'email_spec', '1.4.0'
-  gem 'simplecov', '0.7.1', require: false
-  gem 'spork', '0.9.2'
-  gem 'mocha', '0.13.2', require: 'mocha/setup'
+  gem 'mocha', '0.14.0', require: 'mocha/setup'
   gem 'turnip'
 end
 
-group :staging, :production do
-  gem 'mysql2', '0.3.11'
-  gem 'exception_notification', '3.0.1'
-  # gem 'airbrake', '3.1.6'
+group :production do
+  # gem 'rollbar', require: 'rollbar/rails'
 end

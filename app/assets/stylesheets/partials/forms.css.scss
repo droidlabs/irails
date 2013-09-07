@@ -1,0 +1,100 @@
+form {
+  label {
+    display: block;
+    padding: 4px 0 4px 2px;
+    &.boolean {
+      display: inline;
+    }
+  }
+  label abbr {
+    color: #CC0000;
+    font-size: 11px;
+  }
+  select,
+  textarea,
+  input[type="password"],
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="number"],
+  input[type="tel"] {
+    margin: 2px 0 18px;
+    width: 410px;
+    padding: 6px;
+    background: #fff;
+    color: #222;
+    font-size: 16px;
+    border: 2px solid #ebebeb;
+    padding: 6px;
+  }
+  input[type="file"] {
+    margin: 2px 0 18px;
+  }
+  textarea {
+    height: 70px;
+    width: 400px;
+  }
+  .input {
+    &.boolean {
+      margin: 0 0 10px;
+    }
+  }
+  .error input[type="text"],
+  .error input[type="password"] {
+    border-color: #CC333F;
+  }
+  .field_with_errors {
+    position: relative;
+    margin: 0 0 15px;
+    input {
+      border-color: #CC333F;
+    }
+  }
+  .error {
+    color: #CC0000;
+    padding: 3px;
+    padding-top: 0;
+    font-size: 11px;
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+  }
+  .hint {
+    color: #555;
+    padding: 3px;
+    padding-top: 0;
+    font-size: 11px;
+    display: block;
+    position: relative;
+    top: -15px;
+  }
+}
+button, .button, input[type="submit"] {
+  padding: 0 4px;
+  text-align: center;
+  font: 600 14px/30px $fontOne;
+  color: #424242;
+  display: block;
+  height: 30px;
+  position: relative;
+  border: 1px solid #424242;
+  text-decoration: none;
+  background: #fff;
+  &.center {
+    margin: 5px auto;
+  }
+  &:hover {
+    background: #424242;
+    color: #fff;
+  }
+  &.danger {
+    border: 1px solid #b44;
+    color: #b44;
+    &:hover {
+      background: #b44;
+      color: #fff;
+    }
+  }
+}

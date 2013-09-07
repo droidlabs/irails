@@ -1,4 +1,5 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+load "deploy/assets"
 
 Dir['lib/capistrano/recipes/*.rb'].each { |plugin| load(plugin) }
 

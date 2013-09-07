@@ -1,8 +1,9 @@
-@import "bourbon";
+@import 'partials/setup';
+@import 'droidcss/mixins';
+@import 'droidcss/base';
 
-@import "partials/reset";
-@import "partials/forms";
-@import "partials/layout";
-@import "partials/typography";
-@import "partials/notices";
-@import "partials/views";
+@import 'partials/devise';
+@import 'partials/fonts';
+@import 'partials/forms';
+@import 'partials/layout';
+@import 'partials/home';

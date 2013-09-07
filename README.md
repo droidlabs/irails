@@ -13,8 +13,6 @@ Simple template for Rails 3.2 based projects
 * Configure your config/database.yml
 * $ bundle install
 * $ rake db:setup
-* Run server & workers
-* $ foreman start
 
 ## Deploy to staging
 
@@ -35,10 +33,6 @@ Simple template for Rails 3.2 based projects
 * $ cap log
 * start rails console
 * $ cap console
-
-## Setup javascript testing webdriver
-
-* $ brew update && brew install phantomjs
 
 ## Data migrations
 
@@ -65,4 +59,3 @@ Licenced under [MIT](http://www.opensource.org/licenses/mit-license.php).
 Hope, you'll enjoy iRails!
 
 Cheers, [Droid Labs](http://droidlabs.pro).
-
