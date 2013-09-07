@@ -22,5 +22,11 @@ module Irails
     config.i18n.default_locale = :ru
 
     config.assets.version = '1.0.0'
+
+    config.roadie.enabled = true
+
+    config.to_prepare do
+      Devise::Mailer.layout "mailer"
+    end
   end
 end
