@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'mysql2', '0.3.13'
 gem 'slim-rails', '2.0.1'
 gem 'paperclip', '3.5.1'
 gem 'devise', '3.1.0'
@@ -25,6 +24,10 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks', '2.0.1'
 gem 'turbolinks'
 
+group :test, :development do
+  gem 'sqlite3'
+end
+
 group :development do
   gem 'capistrano', require: false
   gem 'letter_opener'
@@ -47,6 +50,7 @@ group :test do
   gem 'turnip'
 end
 
-group :production do
+group :production, :staging do
+  gem 'mysql2', '0.3.13'
   # gem 'rollbar', require: 'rollbar/rails'
 end
