@@ -2,20 +2,9 @@
 
 en:
   devise:
-    invitations:
-      send_instructions: 'An invitation email has been sent to %{email}.'
-      invitation_token_invalid: 'The invitation token provided is not valid!'
-      updated: 'Your password was set successfully. You are now signed in.'
-      no_invitations_remaining: "No invitations remaining"
-      invitation_removed: 'Your invitation was removed.'
-      new:
-        header: "Send invitation"
-        submit_button: "Send an invitation"
-      edit:
-        header: "Set your password"
-        submit_button: "Set my password"
     confirmations:
-      confirmed: "Your account was successfully confirmed. You are now signed in."
+      confirmed: "Your account was successfully confirmed. Please sign in."
+      confirmed_and_signed_in: "Your account was successfully confirmed. You are now signed in."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
     failure:
@@ -29,8 +18,6 @@ en:
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."
     mailer:
-      invitation_instructions:
-        subject: 'Invitation instructions'
       confirmation_instructions:
         subject: "Confirmation instructions"
       reset_password_instructions:
@@ -55,8 +42,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
       updated: "You updated your account successfully."
     sessions:
-      signed_in: ""
-      signed_out: ""
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
     unlocks:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."

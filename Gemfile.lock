@@ -96,10 +96,11 @@ GEM
       has_active_logger
     daemons (1.1.9)
     database_cleaner (1.1.1)
-    devise (3.0.2)
+    devise (3.1.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.4)
     droidcss (1.0.0)
@@ -135,7 +136,7 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-turbolinks (1.0.0)
+    jquery-turbolinks (2.0.1)
       railties (>= 3.1.0)
       turbolinks
     jquery-ui-rails (4.0.4)
@@ -161,7 +162,7 @@ GEM
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     multi_json (1.7.9)
-    mysql2 (0.3.12)
+    mysql2 (0.3.13)
     navigation_link_to (0.0.1)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -304,15 +305,15 @@ DEPENDENCIES
   configatron (= 2.13.0)
   cyrax
   database_cleaner (= 1.1.1)
-  devise (= 3.0.2)
+  devise (= 3.1.0)
   droidcss
   email_spec (= 1.4.0)
   factory_girl_rails (= 4.2.1)
   jquery-rails
-  jquery-turbolinks (= 1.0.0)
+  jquery-turbolinks (= 2.0.1)
   letter_opener
   mocha (= 0.14.0)
-  mysql2 (= 0.3.12)
+  mysql2 (= 0.3.13)
   navigation_link_to (= 0.0.1)
   paperclip (= 3.5.1)
   pry-rails

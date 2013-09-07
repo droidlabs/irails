@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'mysql2', '0.3.12'
+gem 'mysql2', '0.3.13'
 gem 'slim-rails', '2.0.1'
 gem 'paperclip', '3.5.1'
-gem 'devise', '3.0.2'
+gem 'devise', '3.1.0'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
 gem 'cyrax'
@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'droidcss'
 gem 'jquery-rails'
-gem 'jquery-turbolinks', '1.0.0'
+gem 'jquery-turbolinks', '2.0.1'
 gem 'turbolinks'
 
 group :development do
