@@ -42,7 +42,7 @@ end
 group :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'shoulda', '3.5.0'
-  gem 'database_cleaner', '1.1.1', github: 'bmabey/database_cleaner'
+  gem 'database_cleaner', '0.9.1'
   gem 'factory_girl_rails', '4.2.1'
   gem 'capybara', '2.1.0'
   gem 'email_spec', '1.4.0'
