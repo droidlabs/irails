@@ -1,6 +1,12 @@
 log "truncate database" do
-  ActiveRecord::Base.connection.tables.each do |table|
+  connection = ActiveRecord::Base.connection
+  connection.tables.each do |table|
     next if table == "schema_migrations"
-    ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+    if connection.adapter_name.downcase.to_sym != :sqlite
+      connection.execute("TRUNCATE #{table}")
+    else
+      connection.execute("delete from #{table};")
+      connection.execute("delete from sqlite_sequence where name='#{table}';")
+    end
   end
 end
