@@ -21,7 +21,7 @@ test:
 #   database: irails
 #   host: localhost
 #   username: root
-#   password: mustdie
+#   password: password
 #
 # development:
 #   <<: *defaults
