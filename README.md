@@ -3,7 +3,7 @@
 [![Build Status](https://secure.travis-ci.org/droidlabs/irails.png)](https://travis-ci.org/droidlabs/irails)
 [![Dependency Status](https://gemnasium.com/droidlabs/irails.png)](https://gemnasium.com/droidlabs/irails)
 
-Simple template for Rails 3.2 based projects
+Simple template for Rails 4 based projects
 
 ## Getting Started
 
