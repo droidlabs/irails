@@ -6,12 +6,12 @@ defaults: &defaults
   timeout: 5000
 
 development:
-  database: db/development.sqlite3
   <<: *defaults
+  database: db/development.sqlite3
 
 test:
-  database: db/test.sqlite3
   <<: *defaults
+  database: db/test.sqlite3
 
 ## mysql
 #
@@ -27,12 +27,12 @@ test:
 #   <<: *defaults
 #
 # staging:
-#   database: irails_staging
 #   <<: *defaults
+#   database: irails_staging
 #
 # production:
-#   database: irails_production
 #   <<: *defaults
+#   database: irails_production
 
 # test:
 #   database: irails_test
