@@ -7,40 +7,41 @@ Simple template for Rails 4 based projects
 
 ## Getting Started
 
-* $ git clone git://github.com/droidlabs/irails.git myapp
-* $ cd ./myapp
-* $ cp config/database.yml.example config/database.yml
+* `$ git clone git://github.com/droidlabs/irails.git myapp`
+* `$ cd ./myapp`
+* `$ cp config/database.yml.example config/database.yml`
 * Configure your config/database.yml
-* $ bundle install
-* $ rake db:setup
+* `$ bundle install`
+* `$ rake db:setup`
 
 ## Deploy to staging
 
 ### Setup SSH Access
-* $ brew install ssh-copy-id
-* $ ssh-copy-id username@hostname
+* `$ brew install ssh-copy-id`
+* `$ ssh-copy-id username@hostname`
 
 ### First Server Setup
 * configure config/deploy/staging.rb
-* $ cap deploy:setup
+* `$ cap deploy:setup`
 
 ### Usefull commands
 * deploy with migrations:
-* $ cap deploy:migrations
+* `$ cap deploy:migrations`
 * connect via ssh
-* $ cap ssh
+* `$ cap ssh`
 * show application logs
-* $ cap log
+* `$ cap log`
 * start rails console
-* $ cap console
+* `$ cap console`
+* [see more](https://github.com/capistrano/capistrano/wiki/Capistrano-Tasks)
 
 ## Data migrations
 
 * Generate data migration
-* $ rails g data_migration generate_user_tokens
+* `$ rails g data_migration generate_user_tokens`
 
 * Run data migration
-* $ rake data:migrate
+* `$ rake data:migrate`
 
 ## Admin panel
 
