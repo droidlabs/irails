@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'slim-rails', '2.0.1'
@@ -9,7 +9,7 @@ gem 'navigation_link_to', '0.0.1'
 gem 'cyrax'
 
 gem 'simple_form', github: "plataformatec/simple_form"
-gem 'activeadmin', github: "gregbell/active_admin", branch: 'rails4'
+gem 'activeadmin', '0.6.1', github: "gregbell/active_admin"
 
 # emails styles
 gem 'roadie'

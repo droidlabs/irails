@@ -56,7 +56,10 @@ Irails::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile += %w( active_admin.css active_admin.js active_admin/print.css )
+  config.assets.precompile += %w(
+    *.png *.jpg *.jpeg *.gif
+    active_admin.css active_admin.js active_admin/print.css 
+  )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
