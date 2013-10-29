@@ -6,7 +6,7 @@ gem 'paperclip', '3.5.1'
 gem 'devise', '3.1.0'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
-gem 'cyrax'
+gem 'cyrax', '0.3.0'
 
 gem 'simple_form', github: "plataformatec/simple_form"
 gem 'activeadmin', '0.6.1', github: "gregbell/active_admin"
@@ -29,7 +29,7 @@ group :test, :development do
 end
 
 group :development do
-  gem 'capistrano', require: false
+  gem 'capistrano', '2.15.5', require: false
   gem 'letter_opener'
   gem 'quiet_assets', '1.0.2'
   gem 'thin', '1.5.1'

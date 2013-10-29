@@ -15,3 +15,4 @@ set :use_sudo, false
 
 set :user, 'ssh_username'
 set :password, 'ssh_password'
+set :port, 22
