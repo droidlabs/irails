@@ -9,4 +9,3 @@ config/database.yml
 public/system/**/*
 coverage/
 .idea
-*.espressostorage

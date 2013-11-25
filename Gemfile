@@ -6,10 +6,10 @@ gem 'paperclip', '3.5.1'
 gem 'devise', '3.1.0'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
-gem 'cyrax', '0.3.0'
+gem 'cyrax', '0.4.0.beta2'
 
-gem 'simple_form', github: "plataformatec/simple_form"
-gem 'activeadmin', '0.6.1', github: "gregbell/active_admin"
+gem 'simple_form', '3.0.0'
+gem 'activeadmin', github: "gregbell/active_admin"
 
 # emails styles
 gem 'roadie'

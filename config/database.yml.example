@@ -35,5 +35,5 @@ test:
 #   database: irails_production
 
 # test:
-#   database: irails_test
 #   <<: *defaults
+#   database: irails_test
