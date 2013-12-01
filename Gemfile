@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.1'
 gem 'slim-rails', '2.0.1'
 gem 'paperclip', '3.5.1'
 gem 'devise', '3.1.0'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
-gem 'cyrax', '0.4.0.beta2'
+gem 'cyrax', '0.5.0'
 
 gem 'simple_form', '3.0.0'
 gem 'activeadmin', github: "gregbell/active_admin"
