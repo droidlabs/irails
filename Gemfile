@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '4.0.1'
-gem 'slim-rails', '2.0.1'
-gem 'paperclip', '3.5.1'
+gem 'slim-rails', '~> 2.0.3'
+gem 'paperclip', '~> 3.5.2'
 gem 'devise', '3.1.0'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
@@ -15,10 +15,10 @@ gem 'activeadmin', github: "gregbell/active_admin"
 gem 'roadie'
 
 # assets
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'therubyracer', platforms: :ruby
+gem 'sass-rails', '~> 4.0.1'
+gem 'uglifier', '~> 2.3.2'
+gem 'coffee-rails', '~> 4.0.1'
+gem 'therubyracer', platforms: :ruby, require: 'v8'
 gem 'droidcss'
 gem 'jquery-rails'
 gem 'jquery-turbolinks', '2.0.1'
@@ -51,6 +51,6 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'mysql2', '0.3.13'
+  gem 'mysql2', '0.3.14'
   # gem 'rollbar', require: 'rollbar/rails'
 end
