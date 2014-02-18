@@ -1,28 +1,26 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.0.1'
-gem 'slim-rails', '~> 2.0.3'
-gem 'paperclip', '~> 3.5.2'
+gem 'rails', '4.1.0.rc1'
+gem 'slim-rails', '~> 2.1.0'
+gem 'paperclip', '~> 4.1.0'
 gem 'devise', '~> 3.2.2'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.1'
-gem 'cyrax', '0.5.0'
+gem 'cyrax', '0.6.1'
 
 gem 'simple_form', '3.0.0'
 gem 'activeadmin', github: "gregbell/active_admin"
 
 # emails styles
-gem 'roadie'
+gem 'roadie', '2.4.3'
 
 # assets
 gem 'sass-rails', '~> 4.0.1'
-gem 'uglifier', '~> 2.3.2'
+gem 'uglifier', '~> 2.4.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'therubyracer', platforms: :ruby, require: 'v8'
 gem 'droidcss'
 gem 'jquery-rails'
-gem 'jquery-turbolinks', '2.0.1'
-gem 'turbolinks'
 
 group :test, :development do
   gem 'sqlite3'
@@ -32,25 +30,30 @@ group :development do
   gem 'capistrano', '2.15.5', require: false
   gem 'letter_opener'
   gem 'quiet_assets', '1.0.2'
-  gem 'thin', '1.5.1'
+  gem 'thin', '1.6.0'
   gem 'pry-rails'
-
+  gem 'spring'
+  
   # gem 'capistrano-rbenv', require: false
-  # gem 'zeus'
 end
 
 group :test do
-  gem 'rspec-rails', '~> 2.14.0'
+  gem "minitest" # temporary fix to avoid warnings
+  gem 'rspec-rails', '~> 2.14.1'
+  gem "spring-commands-rspec"
   gem 'shoulda', '3.5.0'
-  gem 'database_cleaner', '1.0.1'
+  gem 'database_cleaner', '1.2.0'
   gem 'factory_girl_rails', '4.2.1'
-  gem 'capybara', '2.1.0'
-  gem 'email_spec', '1.4.0'
-  gem 'mocha', '0.14.0', require: 'mocha/setup'
-  gem 'turnip'
+  gem 'capybara', '2.2.0'
+  gem 'email_spec', '1.5.0'
+  gem 'mocha', '1.0.0', require: 'mocha/setup'
+  gem 'turnip', '1.2.1'
 end
 
 group :production, :staging do
-  gem 'mysql2', '0.3.14'
+  gem 'mysql2', '0.3.15'
   # gem 'rollbar', require: 'rollbar/rails'
 end
+
+# temporary gems
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'

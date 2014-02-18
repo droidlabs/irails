@@ -1,6 +1,6 @@
 article
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), \
-    validate: true, html: { method: :put }) do |f|
+    validate: true, html: { method: :patch }) do |f|
     h2 Account Settings
     = f.input :email, required: true, autofocus: true
     = f.input :full_name, required: true
