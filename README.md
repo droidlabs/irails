@@ -27,11 +27,11 @@ Simple template for Rails 4 based projects
 ### Usefull commands
 * deploy with migrations:
 * `$ cap deploy:migrations`
-* connect via ssh
+* connect via ssh:
 * `$ cap ssh`
-* show application logs
+* show application logs:
 * `$ cap log`
-* start rails console
+* start rails console:
 * `$ cap console`
 * [see more](https://github.com/capistrano/capistrano/wiki/Capistrano-Tasks)
 
