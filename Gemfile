@@ -5,8 +5,8 @@ gem 'slim-rails', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.0'
 gem 'devise', '~> 3.2.2'
 gem 'configatron', '2.13.0'
-gem 'navigation_link_to', '0.0.1'
-gem 'cyrax', '0.6.1'
+gem 'navigation_link_to', '0.0.2'
+gem 'cyrax', '0.7.0'
 
 gem 'simple_form', '3.0.0'
 gem 'activeadmin', github: "gregbell/active_admin"
