@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.1.0.rc1'
+gem 'rails', '4.1.0.rc2'
 gem 'slim-rails', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.0'
-gem 'devise', '~> 3.2.2'
+gem 'devise', '~> 3.2.4'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.2'
-gem 'cyrax', '0.7.0'
+gem 'cyrax', '0.7.3'
 
 gem 'simple_form', '3.0.0'
 gem 'activeadmin', github: "gregbell/active_admin"
@@ -15,7 +15,7 @@ gem 'activeadmin', github: "gregbell/active_admin"
 gem 'roadie', '2.4.3'
 
 # assets
-gem 'sass-rails', '~> 4.0.1'
+gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '~> 2.4.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'therubyracer', platforms: :ruby, require: 'v8'
