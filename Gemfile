@@ -8,7 +8,7 @@ gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.2'
 gem 'cyrax', '0.7.3'
 
-gem 'simple_form', '3.0.0'
+gem 'simple_form', '~> 3.0.0'
 gem 'activeadmin', github: "gregbell/active_admin"
 
 # emails styles
@@ -51,7 +51,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'mysql2', '0.3.15'
+  gem 'pg'
   # gem 'rollbar', require: 'rollbar/rails'
 end
 
