@@ -15,8 +15,8 @@ gem 'activeadmin', github: "gregbell/active_admin"
 gem 'roadie', '2.4.3'
 
 # assets
-gem 'sass-rails', '~> 4.0.2'
-gem 'uglifier', '~> 2.4.0'
+gem 'sass-rails', '~> 4.0.3'
+gem 'uglifier', '~> 2.5.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'therubyracer', platforms: :ruby, require: 'v8'
 gem 'droidcss'
@@ -30,7 +30,7 @@ group :development do
   gem 'capistrano', '2.15.5', require: false
   gem 'letter_opener'
   gem 'quiet_assets', '1.0.2'
-  gem 'thin', '1.6.0'
+  gem 'thin', '1.6.2'
   gem 'pry-rails'
   gem 'spring'
   
@@ -42,8 +42,8 @@ group :test do
   gem "spring-commands-rspec"
   gem 'shoulda', '3.5.0'
   gem 'database_cleaner', '1.2.0'
-  gem 'factory_girl_rails', '4.2.1'
-  gem 'capybara', '2.2.0'
+  gem 'factory_girl_rails', '4.4.1'
+  gem 'capybara', '2.2.1'
   gem 'email_spec', '1.5.0'
   gem 'mocha', '1.0.0', require: 'mocha/setup'
   gem 'turnip', '1.2.1'
