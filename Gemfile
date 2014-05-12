@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.1'
 gem 'slim-rails', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.0'
 gem 'devise', '~> 3.2.4'
@@ -33,7 +33,7 @@ group :development do
   gem 'thin', '1.6.2'
   gem 'pry-rails'
   gem 'spring'
-  
+
   # gem 'capistrano-rbenv', require: false
 end
 
