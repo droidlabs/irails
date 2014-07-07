@@ -1,16 +1,12 @@
 doctype html
-= conditional_html do
+html lang="en-US"
   head
     title= configatron.app_name
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
-
-    = csrf_meta_tags
     = render 'layouts/head'
-  body
-    #wrapper class=(controller_action_class)
+  body class=(controller_action_class)
+    #wrapper
       = render 'layouts/flashes'
       = render 'layouts/header'
       #content
         = yield
-      = render 'layouts/footer'
+    = render 'layouts/footer'

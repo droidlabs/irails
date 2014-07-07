@@ -1,9 +1,12 @@
-@import 'partials/setup';
+@charset "utf-8";
+
 @import 'droidcss/mixins';
+
+@import 'partials/setup';
+@import 'partials/fonts';
+
 @import 'droidcss/base';
 
-@import 'partials/devise';
-@import 'partials/fonts';
-@import 'partials/forms';
+@import 'partials/typography';
 @import 'partials/layout';
-@import 'partials/home';
+@import 'partials/forms';
