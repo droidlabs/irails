@@ -44,9 +44,7 @@ group :test do
   gem 'database_cleaner', '1.2.0'
   gem 'factory_girl_rails', '4.4.1'
   gem 'capybara', '2.2.1'
-  gem 'email_spec', '1.5.0'
   gem 'mocha', '1.0.0', require: 'mocha/setup'
-  gem 'turnip', '1.2.1'
 end
 
 group :production, :staging do
