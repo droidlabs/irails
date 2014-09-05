@@ -1,4 +1,4 @@
-set(:rbenv_ruby_version, '2.1.0')
+set(:rbenv_ruby_version, '2.1.2')
 
 namespace :rbenv do
   task :create_version_file, roles: :web do

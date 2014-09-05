@@ -34,7 +34,7 @@ group :development do
   gem 'pry-rails'
   gem 'spring'
 
-  # gem 'capistrano-rbenv', require: false
+  gem 'capistrano-rbenv', require: false
 end
 
 group :test do

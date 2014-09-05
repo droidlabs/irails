@@ -1,6 +1,6 @@
 require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
-#require 'capistrano-rbenv'
+require 'capistrano-rbenv'
 
 set :stages, %w(staging production)
 set :default_stage, "staging"
