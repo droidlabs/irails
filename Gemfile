@@ -1,18 +1,18 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.6'
 gem 'slim-rails', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.0'
 gem 'devise', '~> 3.2.4'
 gem 'configatron', '2.13.0'
 gem 'navigation_link_to', '0.0.2'
-gem 'cyrax', '0.7.5'
+gem 'cyrax', '~> 0.7.5'
 
-gem 'simple_form', '3.0.2'
+gem 'simple_form', '~> 3.0.2'
 gem 'activeadmin', github: "gregbell/active_admin"
 
 # emails styles
-gem 'roadie', '2.4.3'
+gem 'roadie', '~> 2.4.3'
 
 # assets
 gem 'sass-rails', '~> 4.0.3'
@@ -33,8 +33,7 @@ group :development do
   gem 'thin', '1.6.2'
   gem 'pry-rails'
   gem 'spring'
-
-  gem 'capistrano-rbenv', require: false
+  gem 'net-ssh', '~> 2.7.0'
 end
 
 group :test do

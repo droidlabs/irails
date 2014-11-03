@@ -9,7 +9,7 @@ ActiveAdmin.register User do
     column :email
     column :full_name
     column :created_at
-    default_actions
+    actions
   end
 
   show do

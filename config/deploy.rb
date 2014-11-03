@@ -1,6 +1,9 @@
 require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
-require 'capistrano-rbenv'
+
+set :default_environment, {
+  'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
+}
 
 set :stages, %w(staging production)
 set :default_stage, "staging"
@@ -14,5 +17,4 @@ after   'deploy:setup', 'deploy:first'
 after   'deploy:finalize_update', 'db:create_symlink'
 after   'deploy:create_symlink', 'deploy:cleanup'
 
-#after   'deploy:finalize_update', 'rbenv:create_version_file'
 #after   'deploy:migrate', 'db:migrate_data'
