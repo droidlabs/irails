@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
 gem 'slim-rails', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.0'
 gem 'devise', '~> 3.2.4'
