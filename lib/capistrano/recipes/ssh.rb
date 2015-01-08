@@ -12,5 +12,5 @@ end
 
 task :console do
   puts "Rails console for #{application}"
-  system("#{ssh_cmd} \"cd #{current_path}; #{bundle_cmd rescue 'bundle'} exec rails c #{rails_env}; bash --login\"")
+  system("#{ssh_cmd} \"bash -l -c 'cd #{current_path}; #{bundle_cmd rescue 'bundle'} exec rails c #{rails_env}'; bash --login\"")
 end
