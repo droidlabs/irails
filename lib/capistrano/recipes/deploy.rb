@@ -23,6 +23,21 @@ namespace :deploy do
   end
 end
 
+task :create_symlinks do
+  # DATABASE
+  run "
+    ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml
+  "
+  # Others
+  run "
+    ln -nfs #{shared_path}/config/secrets.yml #{latest_release}/config/secrets.yml &&
+    ln -nfs #{shared_path}/uploads #{latest_release}/public/uploads &&
+    ln -nfs #{shared_path}/system #{latest_release}/public/system &&
+    ln -nfs #{shared_path}/tmp #{latest_release}/tmp &&
+    ln -nfs #{shared_path}/log #{latest_release}/log &&
+  "
+end
+
 namespace :passenger do
   task :start do ; end
   task :stop do ; end

@@ -16,3 +16,9 @@ set :use_sudo, false
 set :user, 'ssh_username'
 set :password, 'ssh_password'
 set :port, 22
+
+set(:rbenv_ruby_version, '2.2.3')
+
+set :default_environment, {
+  'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
+}

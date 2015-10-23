@@ -11,6 +11,7 @@ set :deploy_via, :remote_cache
 set :keep_releases, 5
 set :scm, :git
 
+after   'deploy:finalize_update',   'deploy:create_symlinks'
 before  'deploy:setup', 'db:create_config'
 after   'deploy:setup', 'deploy:first'
 
