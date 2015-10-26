@@ -1,4 +1,4 @@
-set(:server_type, "passenger")
+#set(:server_type, "passenger")
 
 set(:thin_command) { "#{bundle_cmd} exec thin" }
 set(:thin_config_file) { "#{current_path}/thin.yml" }
@@ -20,6 +20,21 @@ namespace :deploy do
     set :deploy_via, :copy
     deploy.update
     db.setup
+  end
+
+  task :create_symlinks do
+    # DATABASE
+    run "
+      ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml
+    "
+    # Others
+    run "
+      ln -nfs #{shared_path}/config/secrets.yml #{latest_release}/config/secrets.yml &&
+      ln -nfs #{shared_path}/uploads #{latest_release}/public/uploads &&
+      ln -nfs #{shared_path}/system #{latest_release}/public/system &&
+      ln -nfs #{shared_path}/tmp #{latest_release}/tmp &&
+      ln -nfs #{shared_path}/log #{latest_release}/log &&
+    "
   end
 end
 

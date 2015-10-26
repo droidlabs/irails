@@ -16,3 +16,8 @@ set :use_sudo, false
 set :user, 'ssh_username'
 set :password, 'ssh_password'
 set :port, 22
+
+set :rbenv_ruby_version, '2.2.3'
+
+# thin, passenger, unicorn
+set :server_type, "thin"
